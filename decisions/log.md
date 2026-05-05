@@ -75,6 +75,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-05 — Scope mínimo del MVP de 1Klick (31 mayo)
+
+**Decision:** El MVP es 1KlickAds con dos capacidades: (1) subir campañas a Meta con IA y (2) agentes de IA vendiendo por WhatsApp. Todo lo demás queda fuera del alcance del 31 de mayo.
+
+**Why:** Con 26 días al deadline, el scope debe estar congelado para que el sprint no se extienda. Estas dos capacidades son el core diferenciador — sin ellas no hay producto; con ellas hay algo que un cliente real puede usar y pagar.
+
+**Alternatives considered:** Incluir onboarding completo, analytics, Marketing Studio (descartado — nice-to-have, no core). Solo Meta Ads sin WhatsApp (descartado — los agentes de ventas son la segunda pieza crítica para demostrar valor).
+
+**Owner:** Amauri.
+
+---
+
 ## 2026-05-04 — Generador de posts desde transcripciones
 
 **Decision:** Construir skill L2 (AI-drafted, human-reviews) que convierte una transcripción de reunión o evento en borrador de post de LinkedIn en la voz de Amauri.

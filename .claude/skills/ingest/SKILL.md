@@ -165,12 +165,12 @@ Solo flaggear si el concepto tiene una narrativa clara o metáfora potente. No f
 
 ---
 
-## Paso 7 — Limpiar el Inbox (opcional)
+## Paso 7 — Limpiar el Inbox (automático)
 
-Preguntar: *"¿Lo quito del Inbox de Notion?"*
+Sin preguntar, borrar el item procesado del Inbox de Notion:
 
-- Si el input fue **Modo A o B** (Inbox de Notion) → usar `notion-update-page` con `update_content` para borrar solo el item procesado (old_str = texto exacto del item, new_str = ""). No borrar todo el Inbox.
-- Si el input fue **Modo C** (transcript de YouTube) → no hay nada que borrar del Inbox a menos que había una línea con el link o referencia al video.
+- Si el input fue **Modo A o B** (Inbox de Notion) → usar `notion-update-page` con `update_content`: `old_str` = texto exacto del item, `new_str` = "". No borrar todo el Inbox, solo el item procesado.
+- Si el input fue **Modo C** (transcript de YouTube) → borrar la línea del Inbox que referenciaba el video, si existía. Si no había línea, no hacer nada.
 
 Nunca reemplazar todo el contenido del Inbox — solo el item específico procesado.
 

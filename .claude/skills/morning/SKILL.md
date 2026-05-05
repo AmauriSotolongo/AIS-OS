@@ -63,15 +63,17 @@ Si hay **una o más conexiones en ❌**, mostrar este bloque **antes** de contin
 - Si dice **"autenticar primero"** → iniciar el flujo OAuth de cada fuente faltante, luego reiniciar desde Paso −1.
 - Si **todas las conexiones están OK** → continuar en silencio con Paso 0.
 
-### Paso 0 — Revisar inbox de Notion (antes de todo)
+### Paso 0 — Revisar inbox de Notion (BLOQUEANTE — antes de Paso 1)
 
-Buscar items en el inbox de Notion que no hayan sido procesados al Brain. Si hay items pendientes:
+**Este paso es secuencial. No lanzar Paso 1 hasta que este paso termine.**
 
-> "Hay [N] items en tu inbox de Notion sin procesar. ¿Corremos `/ingest` primero para que el Brain esté fresco antes del brief?"
+Hacer `notion-fetch` del inbox (ID: `32a68a70-5e15-8024-95b8-ecaccf6fbe67`) y revisar si el bloque `<content>` tiene texto o está vacío.
 
-- Si dice **sí** → correr `/ingest` completo, luego continuar con Paso 1.
-- Si dice **no** o **"ya después"** → continuar directamente con Paso 1 sin preguntar más.
-- Si el inbox está vacío → continuar con Paso 1 en silencio (no avisar que está vacío).
+- Si hay items → **pausar aquí** y preguntar:
+  > "Hay [N] items en tu inbox sin procesar. ¿Corremos `/ingest` primero para que el Brain esté fresco antes del brief?"
+  - Si dice **sí** → correr `/ingest` completo, luego continuar con Paso 1.
+  - Si dice **no** o **"ya después"** → continuar con Paso 1 sin preguntar más.
+- Si el inbox está vacío (`<content>` sin texto) → continuar con Paso 1 en silencio.
 
 ### Paso 1 — Recopilar (todo en paralelo)
 
