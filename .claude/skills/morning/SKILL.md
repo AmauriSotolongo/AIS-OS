@@ -1,6 +1,6 @@
 ---
 name: morning
-description: Brief diario de CTO. Agrega GitHub (commits 24h) + Notion (tareas abiertas) + Second Brain + prioridades Q2 y genera un resumen de arranque estructurado en 5 secciones. Corre cada mañana antes de arrancar el trabajo.
+description: Brief diario de CTO. Agrega GitHub (commits 24h) + Notion (tareas abiertas) + Google Calendar (eventos de hoy) + Second Brain + prioridades Q2 y genera un resumen de arranque estructurado. Corre cada mañana antes de arrancar el trabajo.
 trigger: "/morning", "dame mi brief", "qué tengo hoy", "arrancamos", "brief de hoy"
 bike-method-phase: 1  # Phase 1 — Training wheels. Corre manualmente cada mañana.
 three-ms-attribution: |
@@ -24,6 +24,7 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 | GitHub | Commits últimas 24h en `ads-ai` (repo principal de 1Klick) | `list_commits` en `AmauriSotolongo/ads-ai`, perPage 20. Si el resultado excede tokens, parsear via Bash con `jq` o `python3` para extraer sha, fecha y mensaje. |
 | Notion — activas | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
 | Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
+| Google Calendar | Eventos de hoy | `list_events` con `calendarId: primary`, `timeMin` = inicio del día hoy (00:00 local), `timeMax` = fin del día (23:59 local), `maxResults: 10`. Extraer título, hora inicio y duración. |
 | Second Brain | `Amauri Brain/index.md` | Read directo |
 | Prioridades Q2 | `context/priorities.md` | Read directo |
 
@@ -38,6 +39,29 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 Si corres `/morning` con el inbox lleno, el "Insight del Brain" puede estar desactualizado. Para evitarlo, `/morning` hace una revisión rápida del inbox antes de generar el brief (ver Paso 0 abajo).
 
 ## Ejecución
+
+### Paso −1 — Verificar conexiones (antes de todo)
+
+Antes de recopilar datos, verificar que las tres fuentes externas estén autenticadas. Hacerlo en paralelo:
+
+- **GitHub:** intentar `list_commits` en `AmauriSotolongo/ads-ai` con `perPage: 1`. Si responde → ✅. Si falla → ❌ GitHub.
+- **Notion:** intentar cualquier herramienta real de Notion (distinta de `mcp__notion__authenticate`). Si solo aparece la herramienta de auth → ❌ Notion.
+- **Google Calendar:** intentar `list_events`. Si responde con "requires authentication" o solo aparece la herramienta de auth → ❌ Calendar.
+
+Si hay **una o más conexiones en ❌**, mostrar este bloque **antes** de continuar:
+
+```
+⚠️ Conexiones faltantes — el brief correrá en modo degradado:
+- ❌ Notion → abre /mcp y selecciona "notion" para autenticar
+- ❌ Google Calendar → abre /mcp y selecciona "claude.ai Google Calendar" para autenticar
+- ❌ GitHub → verifica que el MCP de GitHub esté activo en /mcp
+
+¿Continuar en modo degradado o primero autenticamos?
+```
+
+- Si dice **"continuar"** o **"modo degradado"** → seguir con Paso 0 marcando las fuentes faltantes como no disponibles.
+- Si dice **"autenticar primero"** → iniciar el flujo OAuth de cada fuente faltante, luego reiniciar desde Paso −1.
+- Si **todas las conexiones están OK** → continuar en silencio con Paso 0.
 
 ### Paso 0 — Revisar inbox de Notion (antes de todo)
 
@@ -55,6 +79,7 @@ Lanzar todas las lecturas al mismo tiempo:
 - `list_commits` en `ads-ai`
 - Búsqueda Notion de tareas activas (vista "Por estado")
 - Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
+- `list_events` en Google Calendar (eventos de hoy)
 - Read `Amauri Brain/index.md`
 - Read `context/priorities.md`
 
@@ -99,9 +124,16 @@ Con toda la data, generar el brief siguiendo exactamente este formato:
 
 ---
 
+### Agenda de hoy
+
+Eventos del calendario de hoy en orden cronológico. Formato: `HH:MM — Título (Xh)`. Si no hay eventos → "Día libre de reuniones."
+Al final, una línea con el tiempo disponible estimado para trabajo profundo: bloques de 90min+ sin reuniones.
+
+---
+
 ### Top 3 Outcomes de hoy
 
-Tres resultados concretos que deben estar hechos al final del día, priorizados contra los deadlines de mayo/junio. Para cada uno: qué es, por qué hoy y qué desbloquea. Si uno bloquea a otro, marcarlo. Formato: **negrita el outcome**, luego una línea de contexto.
+Tres resultados concretos que deben estar hechos al final del día, priorizados contra los deadlines de mayo/junio **y contra el tiempo real disponible en el calendario**. Para cada uno: qué es, por qué hoy y qué desbloquea. Si uno bloquea a otro, marcarlo. Formato: **negrita el outcome**, luego una línea de contexto.
 
 ---
 
@@ -145,6 +177,10 @@ Directo al contenido. Sin preámbulo, sin "aquí está tu brief", sin resumen al
 Si GitHub no está conectado:
 - Omitir "Contexto técnico" o poner "Sin actividad GitHub confirmada."
 - Todo lo demás igual. No avisar al inicio — es ruido.
+
+Si Google Calendar no responde:
+- Omitir "Agenda de hoy" o poner "Sin acceso al calendario."
+- Los Top 3 Outcomes se priorizan sin considerar tiempo disponible.
 
 ## Notas de implementación
 
