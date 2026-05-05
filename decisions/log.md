@@ -20,6 +20,29 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-05 — Generador de propuestas Digital Compass (PPTX)
+
+**Decision:** Construir skill L2 (`/propuesta-dc`) que genera una propuesta de proyecto completa en formato PPTX para Digital Compass, a partir de 4 datos de intake: cliente, tipo de proyecto, features y presupuesto estimado.
+
+**Why:** Amauri hace 3+ propuestas por semana (~30 min c/u = 1.5 h/semana). El tiempo no se va en Gamma sino en la fase previa: sin estructura fija, cada propuesta se reconstruye desde cero con resultados inconsistentes. Estandarizar el intake + generar el PPTX con plantilla fija elimina el blank page y la variabilidad.
+
+**Proceso:**
+- Trigger: Amauri invoca `/propuesta-dc` con los 4 datos (o los da en conversación)
+- Data: nombre cliente, tipo de proyecto, features, presupuesto estimado
+- Transformación: Claude genera contenido de slides → script python-pptx produce el archivo PPTX
+- Decision point: Amauri revisa pricing, timeline y alcance antes de enviar
+- Destino: archivo PPTX local (abre, revisa, exporta PDF)
+
+**Autonomy level:** L2 — Drafted. AI genera el deck completo, Amauri revisa números y scope.
+
+**KPI:** Tiempo por propuesta (baseline: 30 min → target: 10 min). Secundario: tasa de cierre.
+
+**Alternatives considered:** Prompt para Gamma (descartado — no resuelve la inconsistencia estructural). Google Slides via MCP (formato limitado). PPTX elegido por control total de plantilla y diseño.
+
+**Owner:** Amauri.
+
+---
+
 ## 2026-05-04 — Generador de posts desde transcripciones
 
 **Decision:** Construir skill L2 (AI-drafted, human-reviews) que convierte una transcripción de reunión o evento en borrador de post de LinkedIn en la voz de Amauri.
