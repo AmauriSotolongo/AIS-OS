@@ -22,6 +22,9 @@ Format: `[[Page]] — one-line summary (N sources)`
 
 ### Liderazgo & Founder Mindset
 - [[one-piece-cumples-tu-sueno-ayudando|Cumples tu sueño ayudando a otros a cumplir el suyo]] — La tripulación de Luffy: cada quien se une a su propio sueño (1 source)
+- [[dropi-analogia-rio-ninos|La analogía del río y los niños]] — Los problemas son niños ahogándose; solo los ves si estás adentro del río (1 source)
+- [[negocios-relaciones-no-tecnologia|El negocio es de relaciones, no de tecnología]] — La comunidad hace perdurar lo que la tecnología no puede (1 source)
+- [[callar-aprender-ganar|Callar, aprender, ganar]] — El ciclo de Denzel Washington para founders: silencio primero, después explicar (1 source)
 - [[liderazgo-aprender-antes-de-liderar|Aprender antes de liderar]] — El liderazgo empieza con humildad, no con órdenes (1 source)
 - [[founder-empresas-son-jardines|Las empresas son jardines, no edificios]] — Mueren por falta de foco, no de dinero (1 source)
 - [[producto-3-filtros|El producto correcto pasa 3 filtros]] — Moat, founder fit y narrativa de vida inevitable (1 source)
@@ -43,6 +46,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 
 - [[llm-wiki-pattern|LLM Wiki Pattern]] — Patrón para construir second brains con LLMs: wiki persistente vs RAG clásico (1 source)
 - [[art-of-war-insights|The Art of War — Insights]] — 3 principios de Sun Tzu aplicados a la estrategia y batalla de los 50 clientes de 1Klick (1 source)
+- [[landing-page-patterns-yc|Landing Page Patterns — YC Companies]] — 10 patrones de hero, social proof, CTA y pricing que comparten Stripe, Airbnb, Deel y 6 más (1 source)
 
 ## Syntheses
 

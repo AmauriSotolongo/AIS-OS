@@ -4,6 +4,18 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-05] ingest | Landing Page Patterns — @clear_graphics (YC)
+
+Fuente: 2 posts de @clear_graphics en X (abril 2026). Inbox de Notion.
+Topic creado: wiki/topics/landing-page-patterns-yc.md — 10 patrones + checklist aplicado a 1Klick.
+📲 Candidato a LinkedIn — aplicación práctica de los patrones a 1KlickAds.
+
+## [2026-05-05] ingest | Dropi podcast — 3 conceptos adicionales
+
+Fuente: `raw/2026-05-05-dropi-el-amazon-colombiano-que-nadie-vio-venir-3m-diarios-0-.md` (misma fuente que sesión anterior).
+Conceptos creados: analogía del río y los niños, negocio es de relaciones no de tecnología, callar/aprender/ganar.
+Index actualizado con 3 entradas nuevas bajo Liderazgo & Founder Mindset.
+
 ## [2026-05-05] ingest | Dropi podcast — metáfora de One Piece
 
 Fuente: YouTube — "Dropi, el Amazon Colombiano que NADIE Vio Venir" (Luis Ramos).
