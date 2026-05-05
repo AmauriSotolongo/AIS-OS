@@ -18,11 +18,11 @@ El wiki es un artefacto que **acumula** valor. No empieza desde cero en cada pre
 
 ## Las tres capas
 
-| Capa | Quién la controla | Regla |
-|---|---|---|
-| `raw/` — fuentes brutas | Amauri | Inmutable. El LLM solo lee. |
-| `wiki/` — páginas generadas | El LLM | El LLM escribe y mantiene todo. |
-| `CLAUDE.md` — schema | Co-evolucionan | Las reglas de operación del wiki. |
+| Capa                        | Quién la controla | Regla                             |
+| --------------------------- | ----------------- | --------------------------------- |
+| `raw/` — fuentes brutas     | Amauri            | Inmutable. El LLM solo lee.       |
+| `wiki/` — páginas generadas | El LLM            | El LLM escribe y mantiene todo.   |
+| `CLAUDE.md` — schema        | Co-evolucionan    | Las reglas de operación del wiki. |
 
 ## Las tres operaciones
 
