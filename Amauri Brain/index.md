@@ -21,6 +21,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[Knowledge Compounding]] — Principio de que un knowledge base crece en valor de forma exponencial por sus conexiones (1 source)
 
 ### Liderazgo & Founder Mindset
+- [[one-piece-cumples-tu-sueno-ayudando|Cumples tu sueño ayudando a otros a cumplir el suyo]] — La tripulación de Luffy: cada quien se une a su propio sueño (1 source)
 - [[liderazgo-aprender-antes-de-liderar|Aprender antes de liderar]] — El liderazgo empieza con humildad, no con órdenes (1 source)
 - [[founder-empresas-son-jardines|Las empresas son jardines, no edificios]] — Mueren por falta de foco, no de dinero (1 source)
 - [[producto-3-filtros|El producto correcto pasa 3 filtros]] — Moat, founder fit y narrativa de vida inevitable (1 source)

@@ -4,6 +4,14 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-05] ingest | Dropi podcast — metáfora de One Piece
+
+Fuente: YouTube — "Dropi, el Amazon Colombiano que NADIE Vio Venir" (Luis Ramos).
+Transcripción vía yt-dlp + Whisper API. Raw: raw/2026-05-05-dropi-el-amazon-colombiano-que-nadie-vio-venir-3m-diarios-0-.md
+Concepto extraído: "Cumples tu sueño ayudando a otros a cumplir el suyo" → wiki/concepts/one-piece-cumples-tu-sueno-ayudando.md
+Cross-links: liderazgo-aprender-antes-de-liderar, founder-empresas-son-jardines, distribucion-modelo-monday.
+📲 Candidato a LinkedIn post — Perspectiva, narrativa fuerte.
+
 ## [2026-05-05] ingest | The Art of War — Sun Tzu (procesado en conversación)
 
 Fuente: libro leído en enero 2026, sin notas en Notion. Procesado desde conversación con Amauri.
