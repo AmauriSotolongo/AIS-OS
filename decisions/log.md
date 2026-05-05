@@ -43,6 +43,38 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-05 — Brief diario de CTO (`/morning`)
+
+**Decision:** Construir skill L2 (`/morning`) que agrega GitHub (commits 24h) + Notion (tareas abiertas) + Brain (index + wiki reciente) + prioridades Q2 y genera un brief de arranque de día estructurado en 5 secciones.
+
+**Why:** Amauri pierde ~15-20 min cada mañana revisando fuentes por separado antes de saber en qué enfocarse. Con 26 días para el deadline de mayo, ese overhead es dinero. El brief unifica el contexto en < 3 min.
+
+**Pre-requisito:** conectar GitHub via MCP antes de correr el skill por primera vez.
+
+**Proceso:**
+- Trigger: Amauri corre `/morning` en el chat cada mañana
+- Data: GitHub commits últimas 24h (todos los repos privados) + tareas Notion + Brain/index.md + context/priorities.md
+- Transformación: AI agrega señales, cruza contra Q2 goals, prioriza
+- Decision point: ninguno — Amauri lee y decide
+- Destino: chat (output inline)
+
+**Output format:**
+1. Contexto técnico — qué se movió en GitHub ayer
+2. Foco del día — top 3 tareas de Notion priorizadas contra mayo/junio
+3. Señal de riesgo — posibles blockers para MVP o 50 clientes
+4. Insight del Brain — 1 conexión relevante entre ideas y trabajo del día
+5. La pregunta del día — la más importante antes de las 12pm
+
+**Autonomy level:** L2 — AI genera el brief, Amauri lee y decide.
+
+**KPI:** Less cost. Métrica: tiempo de "laptop abierto → sé qué hacer" (baseline: ~20 min → target: < 3 min).
+
+**Alternatives considered:** Brief solo con Notion (descartado — sin contexto técnico es incompleto para un CTO). Entrega por WhatsApp/email (descartado — más fricción que chat, Amauri ya tiene Claude abierto).
+
+**Owner:** Amauri.
+
+---
+
 ## 2026-05-04 — Generador de posts desde transcripciones
 
 **Decision:** Construir skill L2 (AI-drafted, human-reviews) que convierte una transcripción de reunión o evento en borrador de post de LinkedIn en la voz de Amauri.
