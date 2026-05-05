@@ -11,7 +11,11 @@ This is the source-of-truth file for your AIOS. Fill it in by typing, voice-past
 Identity, offer, ICP. One paragraph each is fine.
 
 ```
-[Your answer here]
+Quién soy: Soy Amauri, Co-Founder y CTO de 1Klick, un ecosistema SaaS de automatización de ventas para empresas latinoamericanas. También co-fundé Digital Compass, una consultora de IA basada en Cancún, México. Me encargo de la arquitectura técnica, el desarrollo de producto y la estrategia de IA. Soy speaker activo en la comunidad de IA/tech en LATAM y organizo eventos sobre tecnología e inteligencia artificial en la región.
+
+Qué vendo: 1Klick es un ecosistema SaaS compuesto por 1Klick Ads (automatización de campañas de Meta Ads) y próximamente 1Klick Sales (CRM para WhatsApp con agentes de IA), diseñado para que las empresas latinoamericanas vendan más con menos fricción. Complementariamente, a través de Digital Compass ofrezco consultoría de IA para PyMEs en México y LATAM, ayudándolas a implementar soluciones prácticas que generan resultados reales.
+
+A quién se lo vendo: Mi cliente ideal es la PyME latinoamericana con operaciones activas y ganas de crecer, pero sin un equipo técnico interno. En 1Klick apuntamos a dueños de negocio y agencias de marketing que quieren escalar sus resultados en Meta y automatizar su proceso de ventas por WhatsApp. En Digital Compass atendemos empresas en México que necesitan estrategia e implementación de IA a la medida.
 ```
 
 ---
@@ -21,11 +25,58 @@ Identity, offer, ICP. One paragraph each is fine.
 An email, a LinkedIn post, a DM, a doc — anything that sounds like you when you're not trying. **Paste verbatim.** Do not type these mid-conversation with Claude — chat-shaped samples are worse than no samples (voice contamination).
 
 ```
-[Sample 1 — paste raw]
+Sample 1 — LinkedIn post (raw):
+
+El 4 de abril nos reunimos más de 600 personas en Cancún con un objetivo en común: entender cómo la IA está cambiando los negocios en LATAM.
+
+Honestamente, no sabíamos qué esperar.
+
+Lo que vivimos superó todas las expectativas. 
+
+Salas llenas. Conversaciones reales. Empresarios, emprendedores y profesionales que no solo vinieron a escuchar — vinieron a transformar la forma en que trabajan.
+
+Eso fue la Cumbre de IA y Tecnología Cancún 2026.
+
+Tuvimos un lineup increíble de speakers que subieron al escenario a compartir lo que realmente está pasando con la IA en los negocios:
+
+🎤 Gerry Del Real — sobre el futuro de la IA en los negocios de LATAM
+🎤 Wander Oliveira Campos Digital Marketing — sobre cómo la IA está revolucionando el marketing
+🎤 César Basurto — Atoms, sobre IA aplicada a ecommerce
+🎤 Wayo Castellanos — sobre IA y finanzas personales y empresariales
+🎤 Josué Abellán Arias — sobre negocios, legado y construir algo que trascienda
+🎤 Yo — presenté Senna, un asistente de IA en WhatsApp para negocios
+🎤 ...y muchos speakers más que llenaron el día de ideas, casos de éxito y visión
+
+Pero lo más importante que me llevo no es el número de asistentes ni las fotos del evento.
+
+Es saber que hay una comunidad hambrienta de seguir aprendiendo. 💪
+
+Y eso es exactamente lo que viene:
+
+→ Capacitaciones prácticas de IA para negocios
+→ Talleres y workshops
+→ Más eventos en Cancún y LATAM
+→ Recursos y herramientas para implementar IA hoy
+
+Esto fue el inicio. No el cierre.
+
+Gracias a cada persona que estuvo ahí, a todos los speakers, a los sponsors y al equipo que hizo posible todo esto.
+
+Si quieres ser parte de lo que sigue — sígueme aquí y únete a nuestra comunidad. El futuro de los negocios en LATAM lo estamos construyendo juntos. 🧭
+
+#IA #InteligenciaArtificial #Cancún #LATAM #DigitalCompass #CumbreIA #Negocios #Tecnología
 ```
 
 ```
-[Sample 2 — paste raw]
+Sample 2 — LinkedIn post (raw):
+
+La semana pasada tuve el honor de subir al escenario junto a Gerry Del Real en el Claude Code Meetup en Cancún.
+
+Compartir lo que hemos construido con IA fue una experiencia que me recuerda por qué vale la pena seguir apostando por esto. Y me reafirma que Quintana Roo tiene todo para ser un referente tecnológico en la región.
+
+Gracias a Ricardo Lira de la Vega, Esteban Gorupicz y Cesar Méndez por la organización y por hacer que fuera posible.
+
+#Claude #ClaudeCode #Anthropic #AI #CommunityBuilding #Mexico #Mérida #Cancún #DevCommunity
 ```
 
 ---
@@ -35,9 +86,8 @@ An email, a LinkedIn post, a DM, a doc — anything that sounds like you when yo
 Quarterly priorities. Not yearly aspirations. Things that, if not done by July, would make you say "I wasted Q2."
 
 ```
-1. [Priority 1]
-2. [Priority 2]
-3. [Priority 3]
+1. Lanzar 1Klick con primeros clientes pagando — mínimo 50 clientes activos usando la plataforma (Meta Ads + agentes de ventas por WhatsApp) antes del 30 de junio. Si no llegamos a 50 con MRR real para julio, perdimos el Q2.
+2. MVP de 1Klick en producción — primera versión completa con agentes de ventas por WhatsApp funcionando, onboarding por QR incluido, con al menos 1 cliente piloto real. Fecha límite: fin de mayo.
 ```
 
 ---
@@ -47,7 +97,7 @@ Quarterly priorities. Not yearly aspirations. Things that, if not done by July, 
 Multiple answers OK. Stripe? Skool? GoHighLevel? QuickBooks? A spreadsheet?
 
 ```
-[Your answer here]
+Stripe
 ```
 
 ---
@@ -57,7 +107,7 @@ Multiple answers OK. Stripe? Skool? GoHighLevel? QuickBooks? A spreadsheet?
 Email (which one — Gmail / Outlook)? Slack? Teams? DMs (Skool / Discord / iMessage)? Phone?
 
 ```
-[Your answer here]
+Gmail y WhatsApp
 ```
 
 ---
@@ -67,7 +117,7 @@ Email (which one — Gmail / Outlook)? Slack? Teams? DMs (Skool / Discord / iMes
 Granola? Otter? Fireflies? Google Drive? Notion? Dropbox? A folder on your desktop you keep meaning to organize?
 
 ```
-[Your answer here]
+Google Drive, Notion, y Granola
 ```
 
 ---
@@ -77,7 +127,8 @@ Granola? Otter? Fireflies? Google Drive? Notion? Dropbox? A folder on your deskt
 The single biggest time-suck or recurring drudgery. Plus where tasks/projects live (ClickUp / Asana / Linear / Notion / a notebook).
 
 ```
-[Your answer here]
+Tareas: Notion
+Drudgery: Propuestas para clientes y generación de contenido — ambas consumen tiempo y se sienten repetitivas pero no se pueden ignorar.
 ```
 
 ---
