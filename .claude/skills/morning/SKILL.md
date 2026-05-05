@@ -22,7 +22,8 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 | Fuente | Qué leer | Cómo |
 |---|---|---|
 | GitHub | Commits últimas 24h en `ads-ai` (repo principal de 1Klick) | `list_commits` en `AmauriSotolongo/ads-ai`, perPage 20. Si el resultado excede tokens, parsear via Bash con `jq` o `python3` para extraer sha, fecha y mensaje. |
-| Notion | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
+| Notion — activas | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
+| Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
 | Second Brain | `Amauri Brain/index.md` | Read directo |
 | Prioridades Q2 | `context/priorities.md` | Read directo |
 
@@ -52,7 +53,8 @@ Buscar items en el inbox de Notion que no hayan sido procesados al Brain. Si hay
 
 Lanzar todas las lecturas al mismo tiempo:
 - `list_commits` en `ads-ai`
-- Búsqueda Notion de tareas
+- Búsqueda Notion de tareas activas (vista "Por estado")
+- Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
 - Read `Amauri Brain/index.md`
 - Read `context/priorities.md`
 
@@ -100,6 +102,19 @@ Con toda la data, generar el brief siguiendo exactamente este formato:
 ### Top 3 Outcomes de hoy
 
 Tres resultados concretos que deben estar hechos al final del día, priorizados contra los deadlines de mayo/junio. Para cada uno: qué es, por qué hoy y qué desbloquea. Si uno bloquea a otro, marcarlo. Formato: **negrita el outcome**, luego una línea de contexto.
+
+---
+
+### Progreso esta semana
+
+Tareas cerradas en los últimos 7 días (con `Fecha de cierre` registrada). Formato: lista con nombre y fecha. Al final: total en una línea — "N tareas cerradas esta semana."
+
+**Coherencia código ↔ tareas:** Al pie de la sección, agregar una línea que cruce commits de ayer con cierres de la semana:
+- Si hay commits ayer pero 0 tareas cerradas esta semana → "⚠️ X commits ayer, 0 tareas cerradas esta semana — el tracking está atrás del trabajo real."
+- Si hay commits y también cierres → "✓ X commits ayer, N tareas cerradas esta semana — tracking al día."
+- Si no hay commits ni cierres → omitir la línea de coherencia.
+
+Si no hay ninguna tarea con fecha de cierre → "Sin cierres registrados esta semana." + línea de coherencia si aplica.
 
 ---
 
