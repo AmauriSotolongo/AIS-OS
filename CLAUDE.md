@@ -21,8 +21,27 @@ Read `references/3ms-framework.md` once. It's how Amauri thinks about AI work. M
 - `connections.md` — registry of every system the AIOS can reach
 - `decisions/log.md` — append-only record of decisions and why
 - `archives/` — old stuff. Don't delete. Move here.
+- `Amauri Brain/` — second brain (see below)
 
 See `EXPANSIONS.md` for what to add as the system grows.
+
+## Second Brain
+
+Amauri's persistent knowledge base lives in `Amauri Brain/`. Full schema and rules are in `Amauri Brain/CLAUDE.md` — read it before any Brain operation.
+
+**Three operations:**
+- **INGEST** — Amauri drops a source in `Amauri Brain/raw/`, you process it into the wiki
+- **QUERY** — Amauri asks a question, you read `index.md` + relevant pages and synthesize
+- **LINT** — periodic health check: contradictions, orphan pages, missing cross-references
+
+**Where knowledge lives:**
+- `Amauri Brain/wiki/entities/` — people, companies, products
+- `Amauri Brain/wiki/concepts/` — ideas, frameworks, models
+- `Amauri Brain/wiki/topics/` — multi-source syntheses
+- `Amauri Brain/wiki/syntheses/` — analyses worth keeping
+- `Amauri Brain/raw/` — source files, never modify
+
+**Rule:** if `content-from-transcript` or any skill needs Amauri's voice, context, or ideas — read the Brain first. It's the source of truth on how he thinks.
 
 ## Knowledge base
 
@@ -42,15 +61,15 @@ Match the register in `references/voice.md`. Directo y genuino. Frases cortas. N
 
 | Domain | Tool | Status |
 |---|---|---|
-| Revenue / Financials | Stripe | not yet connected |
+| Revenue / Financials | Stripe | MCP (API key) |
 | Customer interactions | WhatsApp | not yet connected |
-| Calendar | Google Calendar | not yet connected |
-| Communication | Gmail | not yet connected |
-| Project / task tracking | Notion | not yet connected |
-| Meeting intelligence | Granola | not yet connected |
-| Knowledge / files | Google Drive + Notion | not yet connected |
+| Calendar | Google Calendar | MCP (OAuth) |
+| Communication | Gmail | MCP (OAuth) |
+| Project / task tracking | Notion | MCP (OAuth) |
+| Meeting intelligence | Granola → Notion | manual (paste transcript) |
+| Knowledge / files | Google Drive + Notion | MCP (OAuth) |
 
-Run `/audit` to see freshness and gaps.
+See `connections.md` for auth status and last-checked dates. Run `/audit` to see freshness and gaps.
 
 ## How you work with Amauri
 
