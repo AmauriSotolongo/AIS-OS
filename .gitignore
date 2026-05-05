@@ -6,3 +6,8 @@ __pycache__/
 node_modules/
 .claude/settings.local.json
 audits/
+
+# Obsidian UI state (cambia con cada uso, no aporta al historial)
+Amauri Brain/.obsidian/workspace.json
+Amauri Brain/.obsidian/workspace-mobile.json
+Amauri Brain/.obsidian/cache
