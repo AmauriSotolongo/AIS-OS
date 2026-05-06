@@ -1,7 +1,7 @@
 ---
 name: check
-description: PM interno. Jala tareas de Notion, mueve estados (Sin empezar → En progreso → Listo) según lo que Amauri reporta o confirma en la conversación, y sugiere la siguiente acción por prioridad Q2.
-trigger: "/check", "qué sigue", "cómo voy", "dame mi siguiente tarea", "check", "vale hagámoslo", "vamos con eso"
+description: Chequeo rápido de progreso. Jala las tareas En Progreso de Notion, pregunta cuáles terminaste, las cierra, y te da la siguiente según prioridad Q2. Corre cuando sientas que necesitas reorientarte.
+trigger: "/check", "qué sigue", "cómo voy", "dame mi siguiente tarea", "check"
 bike-method-phase: 1
 ---
 
