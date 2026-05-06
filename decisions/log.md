@@ -18,6 +18,16 @@ Append-only record of meaningful decisions and why they were made. `/level-up` P
 
 Keep it terse. Future-you will thank present-you for capturing the *why*, not just the *what*.
 
+## 2026-05-06 — Skill para archivar reuniones de Granola → Notion Meeting Notes
+
+**Decision:** construir un skill que reciba notas de Granola (pegadas en chat) y cree una fila en la tabla Meeting Notes de Notion.
+
+**Why:** Granola gratis solo guarda reuniones 30 días. El skill evita perder contexto de clientes y decisiones sin pagar Granola Pro.
+
+**Alternatives considered:** procesar manual (descartado — es repetitivo y olvidable); conectar Granola API (no disponible en plan free).
+
+**Owner:** Amauri — agendar en próximo `/level-up`.
+
 ---
 
 ## 2026-05-05 — Generador de propuestas Digital Compass (PPTX)

@@ -21,7 +21,7 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 
 | Fuente | Qué leer | Cómo |
 |---|---|---|
-| GitHub | Commits últimas 24h en `ads-ai` (repo principal de 1Klick) | `list_commits` en `AmauriSotolongo/ads-ai`, perPage 20. Si el resultado excede tokens, parsear via Bash con `jq` o `python3` para extraer sha, fecha y mensaje. |
+| GitHub | Commits últimas 24h en `ads-ai` (repo principal de 1Klick) | `list_commits` en `AmauriSotolongo/ads-ai` para **ambas ramas**: `main` (perPage 20) y `develop` (perPage 10). Consolidar commits de ayer de las dos ramas. Si el resultado excede tokens, parsear via Bash con `jq` o `python3` para extraer sha, fecha y mensaje. |
 | Notion — activas | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
 | Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
 | Google Calendar | Eventos de hoy | `list_events` con `calendarId: primary`, `timeMin` = inicio del día hoy (00:00 local), `timeMax` = fin del día (23:59 local), `maxResults: 10`. Extraer título, hora inicio y duración. |
@@ -78,7 +78,8 @@ Hacer `notion-fetch` del inbox (ID: `32a68a70-5e15-8024-95b8-ecaccf6fbe67`) y re
 ### Paso 1 — Recopilar (todo en paralelo)
 
 Lanzar todas las lecturas al mismo tiempo:
-- `list_commits` en `ads-ai`
+- `list_commits` en `ads-ai` rama `main` (perPage 20)
+- `list_commits` en `ads-ai` rama `develop` (perPage 10)
 - Búsqueda Notion de tareas activas (vista "Por estado")
 - Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
 - `list_events` en Google Calendar (eventos de hoy)
@@ -96,6 +97,8 @@ for c in commits:
     print(c['sha'][:7], c['commit']['author']['date'][:10], c['commit']['message'][:100])
 "
 ```
+
+Al consolidar commits de `main` y `develop`: deduplicar por sha. Un commit que aparece en ambas ramas se reporta una sola vez. Indicar en el brief en qué rama(s) está si aún no fue mergeado a main.
 
 Si GitHub MCP no responde, anotar "Sin actividad GitHub" y continuar.
 

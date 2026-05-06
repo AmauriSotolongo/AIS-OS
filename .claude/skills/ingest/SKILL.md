@@ -52,7 +52,7 @@ Para cada item del inbox, asignar una categoría:
 | `concepto` | idea, aprendizaje, reflexión, framework, metáfora | `Amauri Brain/wiki/concepts/` |
 | `entidad` | persona, empresa o producto nuevo que aparecerá 2+ veces | `Amauri Brain/wiki/entities/` |
 | `referencia` | link, artículo, recurso externo | `Amauri Brain/wiki/topics/` (tag: source-summary) |
-| `feature/tarea` | algo que hay que hacer en 1Klick o Digital Compass | **skip Brain** — solo confirmar a Amauri que va a Tareas |
+| `feature/tarea` | algo que hay que hacer en 1Klick o Digital Compass | **skip Brain** — crear tarea en Notion Tareas (data source `2e968a70-5e15-8007-ae82-000bf7ecb978`) antes de limpiar el inbox |
 | `ruido` | item sin valor claro, screenshot sin contexto, link sin descripción | **skip** — preguntar a Amauri si quiere descartarlo |
 
 Presentar la clasificación antes de procesar:
@@ -165,7 +165,27 @@ Solo flaggear si el concepto tiene una narrativa clara o metáfora potente. No f
 
 ---
 
+## Paso 6.5 — Crear tareas en Notion (ANTES de limpiar el inbox)
+
+**Este paso es obligatorio y va antes del Paso 7. No limpiar el inbox sin haber creado las tareas.**
+
+Para cada item clasificado como `feature/tarea`:
+1. Crear una página en la base de datos Tareas (`data_source_id: 2e968a70-5e15-8007-ae82-000bf7ecb978`) con:
+   - `Nombre de la tarea`: título descriptivo del item
+   - `Estado`: "Sin empezar"
+   - `Prioridad`: "Medio" por defecto (ajustar si el contexto indica Alta o Baja)
+   - `Tipo de tarea`: "💬 Solicitud de funciones" por defecto
+   - `Nivel de esfuerzo`: inferir del contexto (Pequeño/Medio/Grande)
+   - `Descripción`: texto completo del item del inbox
+2. Confirmar a Amauri que la tarea fue creada (URL de Notion).
+
+Solo limpiar el inbox después de que todas las tareas estén creadas exitosamente.
+
+---
+
 ## Paso 7 — Limpiar el Inbox (automático)
+
+**Solo ejecutar este paso si el Paso 6.5 completó sin errores.**
 
 Sin preguntar, borrar el item procesado del Inbox de Notion:
 
@@ -182,4 +202,4 @@ Nunca reemplazar todo el contenido del Inbox — solo el item específico proces
 2. **Nunca modificar `raw/`.** El Inbox de Notion es el raw — se procesa, no se archiva ahí.
 3. **Un concepto = una página.** No meter dos ideas distintas en la misma página.
 4. **Si un item es ambiguo**, preguntar a Amauri antes de clasificar. No asumir.
-5. **Features y tareas de producto no van al Brain.** Son de Notion Tareas — solo confirmar que las vio.
+5. **Features y tareas de producto no van al Brain.** Van a Notion Tareas — crearlas en Notion (Paso 6.5) ANTES de limpiar el inbox. Nunca limpiar el inbox de un feature/tarea sin haberlo creado primero en Notion.
