@@ -52,7 +52,8 @@ Para cada item del inbox, asignar una categoría:
 | `concepto` | idea, aprendizaje, reflexión, framework, metáfora | `Amauri Brain/wiki/concepts/` |
 | `entidad` | persona, empresa o producto nuevo que aparecerá 2+ veces | `Amauri Brain/wiki/entities/` |
 | `referencia` | link, artículo, recurso externo | `Amauri Brain/wiki/topics/` (tag: source-summary) |
-| `feature/tarea` | algo que hay que hacer en 1Klick o Digital Compass | **skip Brain** — crear tarea en Notion Tareas (data source `2e968a70-5e15-8007-ae82-000bf7ecb978`) antes de limpiar el inbox |
+| `feature/tarea` | algo que hay que hacer en 1Klick o Digital Compass | **skip Brain** — antes de crear en Notion, preguntar en el chat lo que falte (¿para qué producto? ¿scope? ¿cliente?). Solo crear la tarea cuando tenga suficiente info para ser accionable. |
+| `decisión` | pregunta de arquitectura, elección de herramienta, trade-off de producto | **skip Brain y Notion** — loguear en `decisions/log.md` con formato estándar (Decision / Why / Alternatives / Owner) |
 | `ruido` | item sin valor claro, screenshot sin contexto, link sin descripción | **skip** — preguntar a Amauri si quiere descartarlo |
 
 Presentar la clasificación antes de procesar:
@@ -202,4 +203,4 @@ Nunca reemplazar todo el contenido del Inbox — solo el item específico proces
 2. **Nunca modificar `raw/`.** El Inbox de Notion es el raw — se procesa, no se archiva ahí.
 3. **Un concepto = una página.** No meter dos ideas distintas en la misma página.
 4. **Si un item es ambiguo**, preguntar a Amauri antes de clasificar. No asumir.
-5. **Features y tareas de producto no van al Brain.** Van a Notion Tareas — crearlas en Notion (Paso 6.5) ANTES de limpiar el inbox. Nunca limpiar el inbox de un feature/tarea sin haberlo creado primero en Notion.
+5. **Features y tareas de producto no van al Brain.** Van a Notion Tareas — pero primero preguntar en el chat lo que falte para que la tarea sea accionable. Luego crearla en Notion (Paso 6.5) ANTES de limpiar el inbox. Nunca limpiar el inbox de un feature/tarea sin haberla creado primero en Notion.

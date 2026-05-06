@@ -26,6 +26,8 @@ Si el usuario no los proporciona al invocar el skill, preguntar uno por uno:
 
 Si el usuario ya pegó una transcripción de Granola o un brief, extraer los 4 datos de ahí y confirmar antes de proceder.
 
+**Antes de ejecutar el script:** confirmar el nombre exacto del cliente en el chat ("¿Grupo Santos o Grupo Santes?"). Un error en el nombre llega al PPTX, al archivo y a Notion — cuesta más corregirlo que preguntar.
+
 ---
 
 ## Ejecución
@@ -80,7 +82,7 @@ Con el contenido generado, llama al script pasando los datos como JSON:
 python3 scripts/generate_proposal.py \
   --cliente "NOMBRE_CLIENTE" \
   --proyecto "TIPO_PROYECTO" \
-  --output "output/proposals/proposal-CLIENTE-FECHA.pptx" \
+  --output "/Users/amaurisotolongo/Desktop/Propuestas/proposal-CLIENTE-FECHA.pptx" \
   --data '{"slide_content": {...}}'
 ```
 
@@ -91,9 +93,9 @@ El script genera el PPTX y confirma la ruta del archivo.
 ### Paso 3 — Entrega al usuario
 
 Confirmar:
-- Ruta del archivo generado
+- Ruta del archivo generado como link clickeable
 - Qué revisar antes de enviar: pricing (Slide 7), timeline (Slide 6), alcance (Slide 4)
-- Recordar: este es un borrador L2 — tú tienes la última palabra en los números
+- Recordar: este es un borrador — tú tienes la última palabra en los números
 
 ---
 

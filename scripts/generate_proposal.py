@@ -64,6 +64,50 @@ def set_bg(slide, color: RGBColor):
     fill.fore_color.rgb = color
 
 
+def add_design_accents(slide, variant: str = "default"):
+    """Add silver geometric accents to slide background."""
+
+    # ── Left accent bar — thick silver vertical strip
+    bar = slide.shapes.add_shape(
+        1, Inches(0), Inches(0), Inches(0.18), SLIDE_H
+    )
+    bar.fill.solid()
+    bar.fill.fore_color.rgb = DC_SILVER
+    bar.line.fill.background()
+
+    # ── Bottom accent bar — full width
+    bottom = slide.shapes.add_shape(
+        1, Inches(0), Emu(SLIDE_H - Emu(55000)), SLIDE_W, Emu(55000)
+    )
+    bottom.fill.solid()
+    bottom.fill.fore_color.rgb = DC_MUTED
+    bottom.line.fill.background()
+
+    # ── Large background circle — outline only (decorative)
+    cx, cy = (7.8, 2.8) if variant != "cover" else (7.5, 2.8)
+    r = 2.2
+    circ = slide.shapes.add_shape(
+        9,  # MSO_SHAPE_TYPE oval
+        Inches(cx - r), Inches(cy - r), Inches(r * 2), Inches(r * 2)
+    )
+    circ.fill.background()
+    circ.line.color.rgb = RGBColor(0x33, 0x33, 0x33)
+    circ.line.width = Emu(20000)
+
+    # ── Small dot grid — top right corner
+    for i in range(3):
+        for j in range(3):
+            dot = slide.shapes.add_shape(
+                1,
+                Inches(9.05 + j * 0.18), Inches(0.22 + i * 0.18),
+                Inches(0.07), Inches(0.07)
+            )
+            dot.fill.solid()
+            dot.fill.fore_color.rgb = DC_SILVER if (i + j) % 2 == 0 else DC_MUTED
+            dot.line.fill.background()
+
+
+
 def _parse_markup(text: str):
     """
     Split text into segments: (content, is_highlight).
@@ -101,32 +145,30 @@ def add_textbox(slide, text, left, top, width, height,
 def add_bullet_slide(slide, title, bullets, title_color=DC_WHITE, bullet_color=DC_SILVER):
     add_textbox(slide, title, 0.6, 0.9, 8.8, 0.65,
                 font_size=26, bold=True, color=title_color)
-    # Thin silver separator line via narrow textbox
-    sep = slide.shapes.add_textbox(Inches(0.6), Inches(1.62), Inches(1.5), Inches(0.04))
-    sep.text_frame.paragraphs[0].runs  # empty
-    sep_fill = sep.fill
-    sep_fill.solid()
-    sep_fill.fore_color.rgb = DC_MUTED
 
-    y = 1.85
+    y = 1.65
     for bullet in bullets:
         add_textbox(slide, f"  {bullet}", 0.6, y, 8.8, 0.5,
                     font_size=17, color=bullet_color)
         y += 0.54
 
 
-def generate_cover_image(proyecto: str) -> str | None:
+def generate_cover_image(proyecto: str, cliente: str) -> str | None:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key or not OPENAI_AVAILABLE:
         return None
     try:
         client = OpenAI(api_key=api_key)
         prompt = (
-            f"Minimalist hero illustration for a tech proposal: {proyecto}. "
-            "Pure black background. Silver and white metallic tones only. "
-            "Abstract geometric shapes, clean lines, subtle glow effects. "
-            "No text, no logos, no people. High-end SaaS pitch deck aesthetic. "
-            "Monochromatic — black, charcoal, silver, platinum white."
+            f"Minimalist hero illustration for a professional services proposal. "
+            f"Context: {proyecto} for {cliente}. "
+            "Pure black background (#0D0D0D). Silver, platinum and white metallic tones only. "
+            "Abstract geometric composition that visually represents the industry and service — "
+            "use symbolic shapes, icons or textures related to the project theme. "
+            "Clean lines, subtle silver glow, high contrast accents. "
+            "No text, no logos, no people, no faces. "
+            "High-end pitch deck cover aesthetic — cinematic, premium, dark mode. "
+            "Monochromatic palette: black, charcoal, silver, platinum white."
         )
         response = client.images.generate(
             model="dall-e-3",
@@ -165,12 +207,13 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     s1 = prs.slides.add_slide(blank)
     set_bg(s1, DC_BLACK)
 
-    img_path = generate_cover_image(proyecto)
+    img_path = generate_cover_image(proyecto, cliente)
     text_w = 5.0 if img_path else 8.8
 
     if img_path:
         s1.shapes.add_picture(img_path, Inches(5.5), Inches(0), Inches(4.5), SLIDE_H)
 
+    add_design_accents(s1, variant="cover")
     add_textbox(s1, "DIGITAL COMPASS", 0.6, 0.55, text_w, 0.4,
                 font_size=11, bold=True, color=DC_MUTED)
     titulo = sc.get("portada", {}).get("titulo", "Propuesta de Proyecto")
@@ -184,6 +227,7 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     # ── SLIDE 2 — Entendemos tu reto ─────────────────────────────────────
     s2 = prs.slides.add_slide(blank)
     set_bg(s2, DC_BLACK)
+    add_design_accents(s2)
     add_textbox(s2, "Entendemos tu reto", 0.6, 0.9, 8.8, 0.65,
                 font_size=28, bold=True)
     reto = sc.get("reto", {}).get("texto", "Descripción del reto.")
@@ -192,24 +236,28 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     # ── SLIDE 3 — Lo que proponemos ──────────────────────────────────────
     s3 = prs.slides.add_slide(blank)
     set_bg(s3, DC_CHARCOAL)
+    add_design_accents(s3)
     add_bullet_slide(s3, "Lo que proponemos",
                      sc.get("propuesta", {}).get("bullets", []))
 
     # ── SLIDE 4 — Alcance ────────────────────────────────────────────────
     s4 = prs.slides.add_slide(blank)
     set_bg(s4, DC_BLACK)
+    add_design_accents(s4)
     add_bullet_slide(s4, "Alcance del proyecto",
                      sc.get("alcance", {}).get("features", []))
 
     # ── SLIDE 5 — Tecnología ─────────────────────────────────────────────
     s5 = prs.slides.add_slide(blank)
     set_bg(s5, DC_CHARCOAL)
+    add_design_accents(s5)
     add_bullet_slide(s5, "Tecnología y enfoque",
                      sc.get("tecnologia", {}).get("bullets", []))
 
     # ── SLIDE 6 — Timeline ───────────────────────────────────────────────
     s6 = prs.slides.add_slide(blank)
     set_bg(s6, DC_BLACK)
+    add_design_accents(s6)
     add_textbox(s6, "Timeline estimado", 0.6, 0.9, 8.8, 0.65,
                 font_size=28, bold=True)
     add_textbox(s6, "* Sujeto a revisión tras kick-off", 0.6, 1.65, 8.8, 0.38,
@@ -223,6 +271,7 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     # ── SLIDE 7 — Inversión ──────────────────────────────────────────────
     s7 = prs.slides.add_slide(blank)
     set_bg(s7, DC_CHARCOAL)
+    add_design_accents(s7)
     inv = sc.get("inversion", {})
     add_textbox(s7, "Inversión", 0.6, 0.9, 8.8, 0.65, font_size=28, bold=True)
     add_textbox(s7, inv.get("total", "A cotizar"), 0.6, 2.0, 8.8, 0.9,
@@ -234,6 +283,7 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     # ── SLIDE 8 — Próximos pasos ─────────────────────────────────────────
     s8 = prs.slides.add_slide(blank)
     set_bg(s8, DC_BLACK)
+    add_design_accents(s8)
     pasos = sc.get("proximos_pasos", {}).get("bullets", [])
     add_bullet_slide(s8, "Próximos pasos", pasos)
     contacto = sc.get("proximos_pasos", {}).get(
@@ -242,6 +292,7 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
                 color=DC_MUTED, align=PP_ALIGN.CENTER)
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    # Default output dir: ~/Desktop/Propuestas/
     prs.save(output_path)
     print(f"✓ Propuesta generada: {output_path}")
 
