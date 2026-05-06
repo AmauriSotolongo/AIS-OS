@@ -169,13 +169,45 @@ Una conexión entre algo del Brain y el trabajo del día. Formato: [[nombre-del-
 
 ### La pregunta del día
 
-La pregunta más importante que Amauri debe responder antes de las 12pm. Una sola. Sin adornos.
+La pregunta más importante que Amauri debe responder **sobre el trabajo de hoy** antes de las 12pm. Debe estar directamente vinculada a uno de los Top 3 Outcomes o a la Señal de riesgo. No es una pregunta estratégica abierta — es la decisión o claridad que desbloquea el día. Una sola. Sin adornos.
 
 ---
 
-### Paso 4 — Entregar
+### Paso 4 — Guardar Top 3 en `context/today.md`
+
+Antes de entregar el brief, escribir `context/today.md` con los tres outcomes del día:
+
+```
+# Foco de hoy — {YYYY-MM-DD}
+
+1. {Outcome 1}
+2. {Outcome 2}
+3. {Outcome 3}
+```
+
+Sobreescribir si el archivo ya existe — cada morning es el nuevo foco del día. Este archivo lo lee `/check` para priorizar la siguiente tarea sin tener que preguntar.
+
+### Paso 5 — Entregar
 
 Directo al contenido. Sin preámbulo, sin "aquí está tu brief", sin resumen al final.
+
+### Paso 6 — Arrancar el día
+
+Inmediatamente después del brief, sin separador, agregar:
+
+```
+**¿Con qué arrancamos?** → [nombre de la tarea recomendada]
+```
+
+La tarea recomendada es la que mejor cumple: (1) alineada a un Top 3 Outcome, (2) desbloqueadora del MVP 31 mayo o los 50 clientes 30 junio, (3) completable en el primer bloque del día.
+
+Esperar respuesta de Amauri:
+
+- Si confirma ("sí", "esa", "dale", "va") → verificar el estado de esa tarea en Notion (ya fue jalada en Paso 1). Si ya está "En progreso" → responder "Ya estaba en progreso. ¡Buen día!" Si está "Sin empezar" → moverla a "En progreso" con `notion-update-page` y responder "Listo, [nombre] en progreso. ¡Buen día!"
+- Si dice otra tarea → buscarla en la lista jalada de Notion. Moverla a "En progreso" si no lo está. Responder "Listo, [nombre] en progreso. ¡Buen día!"
+- Si dice "después" o "ya sé" → no tocar Notion, cerrar con "Entendido. ¡Buen día!"
+
+Solo una actualización de estado. Sin más preguntas.
 
 ## Modo degradado
 
