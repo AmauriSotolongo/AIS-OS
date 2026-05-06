@@ -18,15 +18,28 @@ Append-only record of meaningful decisions and why they were made. `/level-up` P
 
 Keep it terse. Future-you will thank present-you for capturing the *why*, not just the *what*.
 
-## 2026-05-06 — Skill para archivar reuniones de Granola → Notion Meeting Notes
+## 2026-05-06 — Skill `/meeting`: Granola → Notion Meeting Notes
 
-**Decision:** construir un skill que reciba notas de Granola (pegadas en chat) y cree una fila en la tabla Meeting Notes de Notion.
+**Decision:** Construir skill L2 (`/meeting`) que recibe notas de Granola pegadas en chat, parsea los campos clave y crea una fila en la base de datos "Meeting Notes" de Notion. Amauri aprueba el preview antes de que se escriba.
 
-**Why:** Granola gratis solo guarda reuniones 30 días. El skill evita perder contexto de clientes y decisiones sin pagar Granola Pro.
+**Why:** Granola gratis borra reuniones a los 30 días. Sin archivar: 0% de reuniones guardadas. Con el skill: 100%. Cada reunión no guardada es contexto perdido para el sprint de mayo/junio.
 
-**Alternatives considered:** procesar manual (descartado — es repetitivo y olvidable); conectar Granola API (no disponible en plan free).
+**Proceso:**
+- Trigger: Amauri pega notas + corre `/meeting`
+- Data: texto exportado de Granola
+- Transformación: Claude parsea → título, fecha, asistentes, puntos clave, next steps, tipo
+- Decision point: L2 — Amauri ve preview y confirma antes de crear la fila
+- Destino: base de datos "Meeting Notes" en Notion vía MCP
 
-**Owner:** Amauri — agendar en próximo `/level-up`.
+**Autonomy level:** L2 — Drafted. AI parsea y propone, Amauri aprueba.
+
+**KPI:** Less Cost. Métrica: reuniones archivadas (baseline: 0% → target: 100%).
+
+**Alternatives considered:** Archivar manual (descartado — no ocurre); conectar Granola API (no disponible en plan free).
+
+**Artifact:** `.claude/skills/meeting/SKILL.md`
+
+**Owner:** Amauri.
 
 ---
 
