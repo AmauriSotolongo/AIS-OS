@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-07] ingest | Brian Chesky — Redesigning Airbnb for the AI Era (YouTube podcast)
+Entities creadas: brian-chesky, hiroki-asai. Conceptos creados: founder-mode, ai-founder-mode, 11-star-experience, 1-to-10-to-many, motivacion-intrinseca-vs-adulacion, simplicity-como-distilacion, manage-through-work, pipeline-recruiting, consumer-ai-renaissance, community-over-app, progressive-overload-como-disciplina. Topic (source summary): brian-chesky-redesigning-airbnb-ai-era. Total: 14 páginas nuevas.
+
 ## [2026-05-07] ingest | Inbox — 2 items procesados
 Concepto creado: wiki/concepts/miedo-como-el-fuego.md. Libros (Carnegie + Kahneman) → Notion Lista de lectura. Reel de @andresbilbao transcrito y descartado de raw/ (no era Brain-worthy).
 
