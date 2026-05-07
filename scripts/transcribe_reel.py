@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-Descarga el audio de un video de YouTube y lo transcribe con Whisper API.
-Uso: python3 scripts/transcribe_youtube.py <URL>
+Descarga el audio de un Instagram Reel y lo transcribe con Whisper API.
+Uso: python3 scripts/transcribe_reel.py <URL>
 Output: transcripcion guardada en Amauri Brain/raw/YYYY-MM-DD-<slug>.md
+
+Nota: funciona con Reels públicos. Para cuentas privadas necesitas
+pasar cookies con --cookies-from-browser chrome en yt-dlp manualmente.
 """
 
 import sys
@@ -11,7 +14,9 @@ import subprocess
 import json
 import urllib.request
 import tempfile
+import re
 from datetime import date
+
 
 def get_openai_key():
     env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
@@ -21,31 +26,43 @@ def get_openai_key():
                 return line.split('=', 1)[1].strip()
     raise ValueError("OPENAI_API_KEY no encontrado en .env")
 
-def get_video_title(url):
+
+def get_reel_info(url):
     result = subprocess.run(
-        ['yt-dlp', '--print', 'title', '--no-playlist', url],
+        ['yt-dlp', '--print', '%(uploader)s — %(title).60s', '--no-playlist', url],
         capture_output=True, text=True
     )
-    return result.stdout.strip() if result.returncode == 0 else 'video'
+    if result.returncode == 0 and result.stdout.strip():
+        return result.stdout.strip()
+    # fallback: extraer el reel ID del URL
+    match = re.search(r'/reel/([A-Za-z0-9_-]+)', url)
+    return f"reel-{match.group(1)}" if match else "reel"
+
 
 def download_audio(url, output_path):
-    print(f"⬇️  Descargando audio...")
+    print("⬇️  Descargando audio del Reel...")
     result = subprocess.run([
         'yt-dlp',
         '--extract-audio',
         '--audio-format', 'mp3',
-        '--audio-quality', '9',  # lowest quality = smaller file
-        '--postprocessor-args', 'ffmpeg:-ac 1 -ar 16000 -b:a 32k',  # mono, 16kHz, 32kbps
+        '--audio-quality', '9',
+        '--postprocessor-args', 'ffmpeg:-ac 1 -ar 16000 -b:a 32k',
         '--no-playlist',
         '-o', output_path,
         url
     ], capture_output=True, text=True)
     if result.returncode != 0:
-        raise RuntimeError(f"Error descargando: {result.stderr}")
-    print(f"✅ Audio descargado")
+        raise RuntimeError(
+            f"Error descargando Reel.\n{result.stderr}\n\n"
+            "Si la cuenta es privada, exporta las cookies de Instagram desde Chrome "
+            "con la extensión 'Get cookies.txt LOCALLY' y pásalas con:\n"
+            "  yt-dlp --cookies cookies.txt ..."
+        )
+    print("✅ Audio descargado")
+
 
 def transcribe(audio_path, api_key):
-    print(f"🎙️  Transcribiendo con Whisper API...")
+    print("🎙️  Transcribiendo con Whisper API...")
     file_size = os.path.getsize(audio_path) / (1024 * 1024)
     print(f"   Tamaño del archivo: {file_size:.1f} MB")
 
@@ -76,19 +93,20 @@ def transcribe(audio_path, api_key):
 
     return result['text']
 
+
 def slugify(title):
-    import re
     slug = title.lower()
     slug = re.sub(r'[^a-z0-9\s-]', '', slug)
     slug = re.sub(r'\s+', '-', slug.strip())
     return slug[:60]
+
 
 def save_to_brain(title, url, transcript):
     today = date.today().isoformat()
     slug = slugify(title)
     filename = f"{today}-{slug}.md"
 
-    raw_dir = os.path.join(os.path.dirname(__file__), '..', 'Amauri Brain', 'raw', 'staging')
+    raw_dir = os.path.join(os.path.dirname(__file__), '..', 'Amauri Brain', 'raw')
     os.makedirs(raw_dir, exist_ok=True)
     output_path = os.path.join(raw_dir, filename)
 
@@ -96,7 +114,7 @@ def save_to_brain(title, url, transcript):
 
 **Fuente:** {url}
 **Fecha:** {today}
-**Tipo:** transcripción de video/podcast
+**Tipo:** transcripción de Instagram Reel
 
 ---
 
@@ -107,18 +125,19 @@ def save_to_brain(title, url, transcript):
 
     return output_path, filename
 
+
 def main():
     if len(sys.argv) < 2:
-        print("Uso: python3 scripts/transcribe_youtube.py <URL>")
+        print("Uso: python3 scripts/transcribe_reel.py <URL>")
         sys.exit(1)
 
     url = sys.argv[1]
     api_key = get_openai_key()
 
-    print(f"\n🎬 Procesando: {url}\n")
+    print(f"\n📱 Procesando Reel: {url}\n")
 
-    title = get_video_title(url)
-    print(f"📌 Título: {title}")
+    title = get_reel_info(url)
+    print(f"📌 Identificado: {title}")
 
     with tempfile.TemporaryDirectory() as tmpdir:
         audio_path = os.path.join(tmpdir, 'audio.%(ext)s')
@@ -135,11 +154,12 @@ def main():
 
     output_path, filename = save_to_brain(title, url, transcript)
 
-    print(f"\n✅ Transcripción guardada en staging:")
-    print(f"   Amauri Brain/raw/staging/{filename}")
+    print(f"\n✅ Transcripción guardada en:")
+    print(f"   Amauri Brain/raw/{filename}")
     print(f"\n📋 Primeras 300 caracteres:")
     print(f"   {transcript[:300]}...")
-    print(f"\n➡️  /ingest te preguntará si esto va al Brain antes de moverlo a raw/.")
+    print(f"\n➡️  Ahora corre /ingest para procesar al Brain.")
+
 
 if __name__ == '__main__':
     main()

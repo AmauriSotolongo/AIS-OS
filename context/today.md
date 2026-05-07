@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-06
+# Foco de hoy — 2026-05-07
 
-1. Fix galería: implementar paginación en lugar del GET de 400 imágenes (bug Alta, desbloquea demos limpias antes del MVP)
-2. Cerrar cotizaciones CM Redes — Grupo Santos (En progreso, pequeño esfuerzo, ya empezado)
-3. Seguimiento Verificación Meta para 1KlickAds — escalar o buscar canal alternativo para desatascar el bloqueador más crítico del Q2
+1. Confirmar el primer piloto real del MVP — agendar o cerrar una conversación con un prospecto hoy
+2. Arrancar "Escala y optimizar los ads" — primer commit o diseño técnico de la feature de Alta prioridad
+3. Desbloquear verificación de Meta — hacer follow-up activo con Meta o buscar ruta alterna

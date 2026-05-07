@@ -16,13 +16,30 @@ Toma el caos del Inbox y lo convierte en conocimiento estructurado en el Brain. 
 
 ---
 
-## Paso 0 — ¿Hay un video/podcast para transcribir?
+## Paso 0 — ¿Hay un video/podcast/reel para transcribir?
 
-Si el usuario manda una URL de YouTube antes de ingestar → correr primero:
-```
+Si el usuario manda una URL de YouTube o Instagram Reel → correr el script correspondiente:
+
+```bash
+# YouTube
 python3 scripts/transcribe_youtube.py <URL>
+
+# Instagram Reel
+python3 scripts/transcribe_reel.py <URL>
 ```
-Esto guarda el audio transcrito en `Amauri Brain/raw/YYYY-MM-DD-slug.md`. Luego continuar con Modo C.
+
+Los scripts guardan la transcripción en `Amauri Brain/raw/staging/YYYY-MM-DD-slug.md` (zona temporal, no es Brain todavía).
+
+**Después de transcribir — flujo obligatorio antes de continuar:**
+
+1. Leer el archivo de staging.
+2. Resumir en 1-2 líneas de qué va: ¿herramienta? ¿podcast? ¿recomendación de libros? ¿concepto interesante? ¿clase?
+3. Preguntar: *"¿Lo metemos al Brain o lo manejamos de otra forma?"*
+4. Según la respuesta:
+   - **Sí al Brain** → mover el archivo de `raw/staging/` a `raw/` (`mv`) y continuar con Modo C abajo.
+   - **No al Brain** (ej: libros → van a lista de lectura, herramienta → va a Notion, etc.) → manejar el item apropiadamente, luego borrar el archivo de staging (`rm`). No polucionar `raw/` con contenido que no va al Brain.
+
+**Nunca** guardar a `raw/` directamente sin confirmación de Amauri.
 
 ---
 

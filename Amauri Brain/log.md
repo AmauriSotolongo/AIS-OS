@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-07] ingest | Inbox — 2 items procesados
+Concepto creado: wiki/concepts/miedo-como-el-fuego.md. Libros (Carnegie + Kahneman) → Notion Lista de lectura. Reel de @andresbilbao transcrito y descartado de raw/ (no era Brain-worthy).
+
 ## [2026-05-05] ingest | Landing Page Patterns — @clear_graphics (YC)
 
 Fuente: 2 posts de @clear_graphics en X (abril 2026). Inbox de Notion.

@@ -21,6 +21,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[Knowledge Compounding]] — Principio de que un knowledge base crece en valor de forma exponencial por sus conexiones (1 source)
 
 ### Liderazgo & Founder Mindset
+- [[miedo-como-el-fuego|El miedo como el fuego]] — El miedo no se elimina, se dirige: modo consumo vs. modo combustible (1 source)
 - [[one-piece-cumples-tu-sueno-ayudando|Cumples tu sueño ayudando a otros a cumplir el suyo]] — La tripulación de Luffy: cada quien se une a su propio sueño (1 source)
 - [[dropi-analogia-rio-ninos|La analogía del río y los niños]] — Los problemas son niños ahogándose; solo los ves si estás adentro del río (1 source)
 - [[negocios-relaciones-no-tecnologia|El negocio es de relaciones, no de tecnología]] — La comunidad hace perdurar lo que la tecnología no puede (1 source)
