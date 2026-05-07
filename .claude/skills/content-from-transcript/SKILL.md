@@ -46,12 +46,15 @@ El usuario pega o escribe una idea cruda en el chat. Usar eso como base.
 
 **Reglas de voz:**
 - Frases cortas. Narrativa antes que datos.
-- Empezar con algo que pasó — no con una lección.
+- Empezar con algo que pasó o una afirmación contraintuitiva — no con una lección.
 - Comunidad sobre promoción. Humano sobre corporativo.
-- Español latino natural. No traducir del inglés.
+- **Español mexicano.** No colombiano ni genérico. Ejemplos: "pluma" no "esfero", "refri" no "nevera".
 - Emojis funcionales (1-2 máximo, no decorativos).
-- Hashtags al final, 4-6 relevantes.
+- Hashtags al final, 4-5 relevantes.
 - Sin em dashes (—) en exceso.
+- No mencionar la fuente del insight si Amauri no quiere parecer que está repitiendo una idea ajena — en ese caso presentarlo como reflexión propia.
+- Evitar frases agresivas o que descalifiquen directamente al lector.
+- El cierre debe hablar a todos, no asumir que el lector tiene un problema específico. Preferir "La pregunta esencial es..." sobre "Si tus X están bajos..."
 
 ---
 
@@ -68,18 +71,22 @@ Si hay varios candidatos, presentar los 2 mejores: *"¿Cuál resuena más contig
 
 ## Paso 4 — Redactar el borrador
 
-Estructura base:
+Estructura validada (mezcla de apertura personal + estructura contraintuitiva):
 
 ```
-[Línea de apertura — algo que pasó, concreto y específico]
+[Afirmación contraintuitiva O "Me enseñaron mal." — concreto, corto]
 
-[1-2 líneas de contexto]
+[Reconocer que suena a excusa, pero defenderlo]
 
-[El insight — qué cambió en cómo piensas]
+[Las voces que lo niegan — citas de lo que dicen los demás]
 
-[Implicación para la audiencia LATAM]
+[El giro: la afirmación real]
 
-[Cierre con comunidad o pregunta]
+[Ejemplo concreto que lo prueba — ejercicio, caso, situación]
+
+[Conclusión de una línea: el principio destilado]
+
+[Cierre universal — "La pregunta esencial es..." no "Si te pasa X..."]
 
 [Hashtags]
 ```
@@ -87,7 +94,9 @@ Estructura base:
 **No usar:**
 - "Es un honor compartir..."
 - Jerga corporativa o anglicismos innecesarios
-- Más de 150 palabras en el cuerpo
+- Más de 160 palabras en el cuerpo
+- Frases que descalifican directamente ("Eso no es talento, es terquedad")
+- Cierres que asumen que el lector tiene un problema ("Si tus cierres están bajos...")
 
 ---
 
@@ -103,7 +112,7 @@ BORRADOR — revisa antes de publicar
 ¿Cambios? Dime qué ajustar o di "listo" para terminar.
 ```
 
-Máximo 2 rondas de refinamiento. En la tercera, preguntar si prefiere reescribir desde cero con un insight diferente.
+Sin límite de rondas — Amauri edita hasta que queda exacto. Si en alguna ronda manda una frase o párrafo reescrito, incorporarlo exactamente como lo escribió y ajustar el resto para que fluya.
 
 ---
 
