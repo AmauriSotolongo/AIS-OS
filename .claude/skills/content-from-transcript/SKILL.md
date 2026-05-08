@@ -11,15 +11,35 @@ three-ms-attribution: |
 
 Genera un borrador de LinkedIn en la voz de Amauri. Un input = un borrador. Amauri publica.
 
-## Cadencia objetivo: 3 posts por semana
+## Posicionamiento: Founder técnico LATAM
+
+Marca personal de Amauri. Todo lo que sale de aquí debe sonar a *CTO que construye SaaS desde Cancún*. No a marketer, no a coach, no a guru de productividad.
+
+## Cadencia objetivo: 3 posts + 2-3 comentarios estratégicos al día
+
+LinkedIn con <5k followers no se gana posteando más, se gana comentando en posts de creators grandes del nicho (reach farming). Tus posts llegan a 700; un buen comentario en un post de 100k followers te puede ver 10x más gente.
 
 | Tipo | Frecuencia | Fuente |
 |---|---|---|
 | Producto / Builder | 1x/semana | Meeting Notes, decisiones técnicas de 1Klick |
 | Comunidad | 1x/semana | Eventos, meetups, speakers, LATAM tech |
 | Perspectiva | 1x/semana | Brain (`wiki/concepts/`) |
+| Comentario estratégico | 2-3x/día | Post de creator + Brain |
 
-Si el usuario no especifica el tipo, preguntar cuál de los tres quiere generar esta vez para mantener balance semanal.
+Si el usuario no especifica el tipo, preguntar cuál quiere generar esta vez para mantener balance semanal.
+
+**Comentario estratégico:** input = post de un creator grande de IA / SaaS / founders LATAM. Output = comentario corto (20-40 palabras, NO mini-post) en la voz de Amauri.
+
+Estructura validada:
+```
+[Reconocimiento humano corto — "Unos cracks", "Buen punto el primero", "Me encantó X"]. [Una observación tuya desde la trinchera, máximo 2 frases].
+```
+
+**No es:** mini-post estructurado, análisis técnico extendido, resumen del original, ni opinión-densa con cierre tipo slogan.
+**Sí es:** comentario que parece escrito en 30 segundos por alguien que sabe del tema y tiene algo concreto que aportar.
+
+Ejemplo validado (sobre post de Enzo Cavalie / Enter $30M ARR):
+> Unos cracks, me encantó el primer punto. En LATAM, si tu onboarding depende del IT del cliente, no escalas.
 
 ---
 
@@ -58,7 +78,39 @@ El usuario pega o escribe una idea cruda en el chat. Usar eso como base.
 
 ---
 
-## Paso 3 — Extraer el insight
+## Paso 3 — Filtro de marca personal (Founder técnico LATAM)
+
+Antes de extraer cualquier insight, validar que pasa **al menos uno** de estos filtros:
+
+- ¿Es una decisión técnica o de producto que Amauri tomó en 1Klick?
+- ¿Es un trade-off real que vivió construyendo SaaS desde LATAM?
+- ¿Es algo que aprendió ship-eando rápido con IA que un founder no técnico no sabría?
+
+Si el insight no pasa ninguno → **no es para su marca**. Decírselo claro y proponer guardarlo en el Brain o descartarlo. No redactar igual.
+
+**Insights que NO escribimos** (aunque sean buenos):
+- Tips genéricos de productividad o "cómo usar ChatGPT"
+- Reflexiones de liderazgo / mindset sin sustancia técnica
+- Growth hacks de LinkedIn, ventas o marketing como tema central
+- Contenido motivacional o de hustle culture
+- Resúmenes de libros sin opinión propia anclada en construir 1Klick
+
+### Regla anti-promo (crítica para marca personal)
+
+**Nunca** nombrar 1Klick, Digital Compass ni ningún producto propio en posts ni comentarios. La experiencia construyendo aparece como contexto, no como sujeto.
+
+- ✅ "Construyendo SaaS B2B en LATAM…"
+- ✅ "Como CTO de un SaaS de WhatsApp…"
+- ✅ "Diseñando onboarding para PyMEs…"
+- ❌ "En 1Klick lo estamos viviendo…"
+- ❌ "Nuestro producto resuelve esto con…"
+- ❌ Cualquier link o CTA al producto
+
+Marca personal ≠ promo del producto. El take es el sujeto; tu trinchera es la evidencia.
+
+---
+
+## Paso 4 — Extraer el insight
 
 Identificar el momento más valioso:
 - ¿Qué fue sorprendente, inesperado o contraintuitivo?
@@ -69,7 +121,7 @@ Si hay varios candidatos, presentar los 2 mejores: *"¿Cuál resuena más contig
 
 ---
 
-## Paso 4 — Redactar el borrador
+## Paso 5 — Redactar el borrador
 
 Estructura validada (mezcla de apertura personal + estructura contraintuitiva):
 
@@ -100,7 +152,7 @@ Estructura validada (mezcla de apertura personal + estructura contraintuitiva):
 
 ---
 
-## Paso 5 — Presentar y refinar
+## Paso 6 — Presentar y refinar
 
 ```
 ---
@@ -116,7 +168,7 @@ Sin límite de rondas — Amauri edita hasta que queda exacto. Si en alguna rond
 
 ---
 
-## Paso 6 — Imagen (opcional)
+## Paso 7 — Imagen (opcional)
 
 Cuando el usuario aprueba el borrador, ofrecer generar imagen con gpt-image-1:
 
@@ -157,7 +209,7 @@ La imagen se guarda directamente en `Desktop/posts/` con el nombre del post como
 
 ---
 
-## Paso 7 — Dar el texto final y registrar
+## Paso 8 — Dar el texto final y registrar
 
 1. Entregar el texto con espacios listos para copiar a LinkedIn.
 2. Recordar: *"Bike Method Phase 1 — tú publicas manualmente."*
@@ -177,3 +229,26 @@ La imagen se guarda directamente en `Desktop/posts/` con el nombre del post como
 3. **Si la transcripción es de cliente**, preguntar sensibilidad antes de redactar.
 4. **Si no hay input disponible**, pedirlo. No inventar contenido.
 5. **Si suena genérico o corporativo**, reescribir.
+6. **Nunca nombrar productos propios** (ver Regla anti-promo en Paso 3).
+
+---
+
+## Protocolo anti-bloqueo
+
+A veces Amauri tiene pena de publicar (especialmente comentarios). Síntomas: pide más rondas de edición de las necesarias, dice "me da pena", procrastina con "después lo posteo".
+
+Cuando lo detectes, NO sigas editando. Recordar:
+
+1. Ya habla frente a 600 personas en escenario. 30 palabras en LinkedIn es objetivamente menos riesgoso.
+2. El comentario no tiene que ser brillante. Tiene que ser suyo.
+3. Los primeros 20 comentarios se sienten raros. Del 21 en adelante es músculo.
+4. Reframe: no está "posteando para que lo vean". Está dejando rastro de cómo piensa.
+
+**Protocolo de 30 segundos:**
+1. Copia el comentario tal como está
+2. Pégalo en el post
+3. Publica
+4. Cierra LinkedIn — no revisar engagement el mismo día
+5. Mañana repite
+
+La regla: **el bloqueo se quita con volumen, no con perfección.**
