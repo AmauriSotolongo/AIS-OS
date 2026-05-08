@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-07
+# Foco de hoy — 2026-05-08
 
-1. Confirmar el primer piloto real del MVP — agendar o cerrar una conversación con un prospecto hoy
-2. Arrancar "Escala y optimizar los ads" — primer commit o diseño técnico de la feature de Alta prioridad
-3. Desbloquear verificación de Meta — hacer follow-up activo con Meta o buscar ruta alterna
+1. Avanzar "Escala y optimizar los ads" (En progreso, feature core del MVP)
+2. Quitar waitlist de la landing 1klickads y dejar signup directo en producción
+3. Fix mensaje de error: página FB no vinculada a WhatsApp Business (bug detectado anoche en prod)

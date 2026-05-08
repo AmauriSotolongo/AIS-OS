@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-08] ingest | Inbox — 11 items procesados
+10 features/tareas creadas en Notion Tareas DB (1Klick): renombrar asistente IA, landing a producción, ver números vinculados, error FB→WhatsApp, post LinkedIn a tabla contenido, imagen referencia editar imagen, UI pricing app=landing, videos de demo soporte, brand kit, responsive laptop campaigns. 1 ruido (screenshot vinculada a tarea de números vinculados). 0 conceptos creados (post LinkedIn descartado del Brain por decisión de Amauri).
+
 ## [2026-05-07] ingest | Motor de Ventas Predecible — Santiago Aparicio (YouTube podcast)
 Entities creadas: santiago-aparicio, ontop. Conceptos creados: prospectar-vs-convencer, volumen-como-ventaja, estandar-de-actuacion-ventas, input-vs-output-metrics-ventas, founder-led-sales, tolerancia-al-dolor-ventas, framework-24-horas, four-minute-miles, estacionalidad-es-bullshit, ai-en-ventas-potencializa. Topic (source summary): motor-ventas-predecible-aparicio. Total: 13 páginas nuevas.
 
