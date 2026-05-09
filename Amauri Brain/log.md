@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-09] ingest | Inbox — 2 items procesados
+1 feature/tarea creada en Notion (revisar precios y productos en Stripe producción 1Klick Ads). 1 ruido descartado (reel MAD Cripto sobre DCA Bitcoin — fuera de scope del Brain, raw borrado).
+
 ## [2026-05-08] ingest | Inbox — 11 items procesados
 10 features/tareas creadas en Notion Tareas DB (1Klick): renombrar asistente IA, landing a producción, ver números vinculados, error FB→WhatsApp, post LinkedIn a tabla contenido, imagen referencia editar imagen, UI pricing app=landing, videos de demo soporte, brand kit, responsive laptop campaigns. 1 ruido (screenshot vinculada a tarea de números vinculados). 0 conceptos creados (post LinkedIn descartado del Brain por decisión de Amauri).
 
