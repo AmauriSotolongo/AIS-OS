@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-09
+# Foco de hoy — 2026-05-11
 
-1. Revisar precios y productos en Stripe producción (1Klick Ads) — desbloquea cobros reales hacia los 50 clientes.
-2. Piloto ya activo y vendiendo — cambiar foco a sumar más clientes pagando hacia los 50.
-3. Avanzar features core en progreso (Home estilo chat / Marketing Studio).
+1. Marketing Studio dentro de 1KlickAds — cerrar bloque concreto de generación de video (módulo core del MVP del 31 mayo).
+2. Home estilo chat conversacional (Attio) — avanzar primer flujo navegable end-to-end, no se queda en wireframe.
+3. Outreach activo a piloto + 2-3 prospectos pagantes — empujar el motor de adquisición ahora que el MVP ya está activado.
