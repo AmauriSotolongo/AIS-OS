@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-12] ingest | Inbox — 2 items procesados
+2 feature/tareas creadas en Notion (Módulo de ayuda con tracking en sidebar de 1KlickAds; Pulir Copiloto — mejorar datos/insights del dashboard). 0 conceptos al Brain.
+
 ## [2026-05-09] ingest | Inbox — 2 items procesados
 1 feature/tarea creada en Notion (revisar precios y productos en Stripe producción 1Klick Ads). 1 ruido descartado (reel MAD Cripto sobre DCA Bitcoin — fuera de scope del Brain, raw borrado).
 
