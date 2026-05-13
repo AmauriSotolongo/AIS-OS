@@ -171,15 +171,19 @@ def generate_cover_image(proyecto: str, cliente: str) -> str | None:
             "Monochromatic palette: black, charcoal, silver, platinum white."
         )
         response = client.images.generate(
-            model="dall-e-3",
+            model="gpt-image-1",
             prompt=prompt,
             size="1024x1024",
-            quality="standard",
             n=1,
         )
-        url = response.data[0].url
+        import base64
         tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
-        urllib.request.urlretrieve(url, tmp.name)
+        data0 = response.data[0]
+        if getattr(data0, "b64_json", None):
+            tmp.write(base64.b64decode(data0.b64_json))
+            tmp.close()
+        else:
+            urllib.request.urlretrieve(data0.url, tmp.name)
         print(f"✓ Imagen IA generada")
         return tmp.name
     except Exception as e:

@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-12
+# Foco de hoy — 2026-05-13
 
-1. Definir scope de "Pulir Copiloto" y arrancar la primera iteración — desbloquea retención del MVP.
-2. Marketing Studio: definir el corte mínimo demostrable a un cliente (no terminar todo, recortar).
-3. Contactar 3-5 prospectos de pilot pagando — sin leads al funnel hoy, los 50 clientes para junio se vuelven imposibles.
+1. Propuestas Digital Compass para restaurantes (genérica + Kaalau/Huevo/Aristeo) — la quieren hoy.
+2. Pulir prompt de generación de anuncios — 1Klick Ads (hooks fuertes, no genéricos).
+3. Avanzar Marketing Studio dentro de 1KlickAds (módulo de video).

@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-13] ingest | Inbox — 2 items procesados
+2 feature/tareas creadas en Notion: pulir prompt de generación de anuncios en 1Klick Ads (anuncios genéricos sin hooks fuertes); propuestas de app para restaurantes en Digital Compass (versión genérica + versión con nombre — clientes mencionados: Kaalau, Huevo, Aristeo). 0 conceptos al Brain.
+
 ## [2026-05-12] ingest | Inbox — 2 items procesados
 2 feature/tareas creadas en Notion (Módulo de ayuda con tracking en sidebar de 1KlickAds; Pulir Copiloto — mejorar datos/insights del dashboard). 0 conceptos al Brain.
 
