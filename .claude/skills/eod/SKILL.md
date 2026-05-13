@@ -94,16 +94,21 @@ Para cada tarea confirmada por Amauri:
 
 Hacer todas las actualizaciones en paralelo.
 
-### Paso 5 — Correo al cofundador
+### Paso 5 — Correo a los cofundadores
 
-Preguntar: "¿Mando el resumen a tu cofundador?"
+Preguntar: "¿Mando el resumen a tus cofundadores?"
 
 Si Amauri confirma, crear un borrador con `create_draft` en Gmail:
-- **Para:** digitalcompass.ia@gmail.com
+- **Para:** `digitalcompass.ia@gmail.com`, `gdelreal2@gmail.com` (ambos en un solo borrador)
 - **Asunto:** Cierre del día — {fecha larga, ej. "6 de mayo 2026"}
-- **Cuerpo:** resumen directo — commits del día (agrupados por tema, no listados por SHA), tareas cerradas y qué sigue en progreso. Tono natural, sin ceremonia.
+- **Cuerpo:** abrir con "Hola, soy el asistente de Amauri. Te paso el cierre del día." Después: resumen directo — commits del día (agrupados por tema, no listados por SHA), tareas cerradas y qué sigue en progreso. Cerrar con "Saludos." Tono natural, sin ceremonia. **Nunca firmar como Amauri** — el correo lo manda el asistente en su nombre.
 
-Nota: solo se puede crear el borrador, no enviarlo directamente. Avisar a Amauri que está en Gmail listo para enviar, o si quiere verlo primero.
+Nota: solo se puede crear el borrador, no enviarlo directamente. Avisar a Amauri que está en Gmail listo para enviar.
+
+**Gotchas operacionales:**
+- Si el MCP de Notion devuelve "requires re-authorization", pedir a Amauri que corra `/mcp` y reanude con "sigue". No intentar cerrar tareas sin Notion.
+- Si el MCP de Gmail devuelve "Server not found", pedir reconexión con `/mcp` y reintentar. No ofrecer pegar el correo manual antes de reintentar.
+- `create_draft` no permite editar drafts existentes. Si Amauri pide cambios al borrador (tono, destinatarios), crear uno nuevo y avisar que borre el anterior.
 
 ### Paso 6 — Confirmar
 

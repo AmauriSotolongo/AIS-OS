@@ -12,6 +12,8 @@ import argparse
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 import urllib.request
@@ -255,7 +257,8 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     s5 = prs.slides.add_slide(blank)
     set_bg(s5, DC_CHARCOAL)
     add_design_accents(s5)
-    add_bullet_slide(s5, "Tecnología y enfoque",
+    add_bullet_slide(s5,
+                     sc.get("tecnologia", {}).get("titulo", "Tecnología y enfoque"),
                      sc.get("tecnologia", {}).get("bullets", []))
 
     # ── SLIDE 6 — Timeline ───────────────────────────────────────────────
@@ -304,12 +307,40 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
         os.unlink(img_path)
 
 
+def convert_to_pdf(pptx_path: str) -> str | None:
+    """Convert a PPTX to PDF using LibreOffice headless. Returns PDF path or None."""
+    soffice = shutil.which("soffice") or "/Applications/LibreOffice.app/Contents/MacOS/soffice"
+    if not Path(soffice).exists() and not shutil.which("soffice"):
+        print("⚠ LibreOffice no encontrado — saltando conversión a PDF.")
+        return None
+    out_dir = str(Path(pptx_path).parent)
+    try:
+        subprocess.run(
+            [soffice, "--headless", "--convert-to", "pdf", "--outdir", out_dir, pptx_path],
+            check=True, capture_output=True, text=True, timeout=120,
+        )
+        pdf_path = str(Path(pptx_path).with_suffix(".pdf"))
+        if Path(pdf_path).exists():
+            print(f"✓ PDF generado: {pdf_path}")
+            return pdf_path
+        print("⚠ LibreOffice corrió pero no se encontró el PDF.")
+        return None
+    except subprocess.CalledProcessError as e:
+        print(f"⚠ Conversión a PDF falló: {e.stderr}")
+        return None
+    except subprocess.TimeoutExpired:
+        print("⚠ Conversión a PDF excedió el tiempo límite.")
+        return None
+
+
 def main():
     parser = argparse.ArgumentParser(description="Genera propuesta Digital Compass en PPTX")
     parser.add_argument("--cliente",  required=True)
     parser.add_argument("--proyecto", required=True)
     parser.add_argument("--output",   required=True)
     parser.add_argument("--data",     required=True)
+    parser.add_argument("--keep-pptx", action="store_true",
+                        help="Conservar el PPTX intermedio (por defecto solo se entrega PDF)")
     args = parser.parse_args()
 
     try:
@@ -318,7 +349,24 @@ def main():
         print(f"Error en JSON: {e}")
         sys.exit(1)
 
-    build_presentation(data, args.cliente, args.proyecto, args.output)
+    # --output puede venir como .pdf o .pptx — normalizamos.
+    output = Path(args.output)
+    pptx_path = output.with_suffix(".pptx")
+    pdf_path = output.with_suffix(".pdf")
+
+    build_presentation(data, args.cliente, args.proyecto, str(pptx_path))
+
+    pdf_result = convert_to_pdf(str(pptx_path))
+
+    if pdf_result and not args.keep_pptx:
+        try:
+            pptx_path.unlink()
+            print(f"✓ PPTX intermedio eliminado")
+        except OSError:
+            pass
+
+    if not pdf_result:
+        print("⚠ Se conservó el PPTX porque la conversión a PDF falló.")
 
 
 if __name__ == "__main__":
