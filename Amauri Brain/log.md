@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-14] ingest | Inbox — 3 items procesados
+1 concepto creado: storybrand-sb7 (framework SB7 de Donald Miller, vía reel de Ramón Riva — el cliente es el héroe, Grunt Test, 7 elementos narrativos). Libro "Building a Story Brand" agregado a Notion Lista de lectura. 2 features/tareas creadas en Notion: revisar Stripe + definir precios anuales/semestrales (Alta); investigar y fixear lag al entrar a la vista de Copiloto (1Klick Ads).
+
 ## [2026-05-13] ingest | Inbox — 2 items procesados
 2 feature/tareas creadas en Notion: pulir prompt de generación de anuncios en 1Klick Ads (anuncios genéricos sin hooks fuertes); propuestas de app para restaurantes en Digital Compass (versión genérica + versión con nombre — clientes mencionados: Kaalau, Huevo, Aristeo). 0 conceptos al Brain.
 

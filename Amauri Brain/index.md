@@ -45,6 +45,9 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[1-to-10-to-many|1 to 10 to Many]] — Pilotear en 1 mercado → 10 → industrializar; hacer problema pequeño primero (1 source)
 - [[simplicity-como-distilacion|Simplicity como Destilación]] — Simplicidad = entender la esencia, no quitar cosas; legado de Hiroki Asai/Apple (1 source)
 
+### Marketing & Messaging
+- [[storybrand-sb7|StoryBrand SB7]] — El cliente es el héroe, tu marca es el guía; Grunt Test de 5 segundos para landings (1 source)
+
 ### Estrategia & Mercado
 - [[consumer-ai-renaissance|Consumer AI Renaissance]] — La ola consumer de AI llega en 12-24 meses; hoy todo es enterprise (1 source)
 - [[community-over-app|Community Over App]] — Apps → agentes; la comunidad es el único moat que perdura en era AI (1 source)
@@ -84,4 +87,4 @@ Format: `[[Page]] — one-line summary (N sources)`
 
 ---
 
-*Last updated: 2026-05-07*
+*Last updated: 2026-05-14*
