@@ -281,11 +281,33 @@ def build_presentation(data: dict, cliente: str, proyecto: str, output_path: str
     add_design_accents(s7)
     inv = sc.get("inversion", {})
     add_textbox(s7, "Inversión", 0.6, 0.9, 8.8, 0.65, font_size=28, bold=True)
-    add_textbox(s7, inv.get("total", "A cotizar"), 0.6, 2.0, 8.8, 0.9,
-                font_size=52, bold=True, color=DC_WHITE, align=PP_ALIGN.CENTER)
-    add_textbox(s7, inv.get("modalidad", "50% inicio · 50% entrega"),
-                0.6, 3.2, 8.8, 0.55, font_size=17,
-                color=DC_SILVER, align=PP_ALIGN.CENTER)
+
+    opciones = inv.get("opciones")
+    if opciones:
+        # Multi-opción: hasta 3 columnas lado a lado.
+        n = max(1, min(len(opciones), 3))
+        gutter = 0.3
+        col_w = (8.8 - gutter * (n - 1)) / n
+        for i, opt in enumerate(opciones):
+            x = 0.6 + i * (col_w + gutter)
+            add_textbox(s7, opt.get("titulo", ""),
+                        x, 1.85, col_w, 0.45,
+                        font_size=15, bold=True, color=DC_SILVER,
+                        align=PP_ALIGN.CENTER)
+            add_textbox(s7, opt.get("monto", ""),
+                        x, 2.35, col_w, 0.95,
+                        font_size=34, bold=True, color=DC_WHITE,
+                        align=PP_ALIGN.CENTER)
+            add_textbox(s7, opt.get("descripcion", ""),
+                        x, 3.35, col_w, 1.4,
+                        font_size=13, color=DC_SILVER,
+                        align=PP_ALIGN.CENTER)
+    else:
+        add_textbox(s7, inv.get("total", "A cotizar"), 0.6, 2.0, 8.8, 0.9,
+                    font_size=52, bold=True, color=DC_WHITE, align=PP_ALIGN.CENTER)
+        add_textbox(s7, inv.get("modalidad", "50% inicio · 50% entrega"),
+                    0.6, 3.2, 8.8, 0.55, font_size=17,
+                    color=DC_SILVER, align=PP_ALIGN.CENTER)
 
     # ── SLIDE 8 — Próximos pasos ─────────────────────────────────────────
     s8 = prs.slides.add_slide(blank)
