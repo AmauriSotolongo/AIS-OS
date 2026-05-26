@@ -4,6 +4,18 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-26] ingest | Inbox — 9 items procesados
+7 features/tareas creadas en Notion: 6 de 1Klick Ads (pulir prompts por nicho/real estate; exportar imágenes a Canva; editar plan mensual con IA antes de publicar; cambiar precios en landing; pulir copiloto en flujo de generar; Meta Library mostrar todas las pautas y recomendar anuncios de todas) + 1 de Digital Compass (landing recovery center, cliente). 2 descartados como ruido: reel de Jun Yuh (personal branding tier list) y "tipografía" (sin contexto). 0 conceptos al Brain.
+
+## [2026-05-20] ingest | Inbox — 4 items procesados
+2 features/tareas creadas en Notion (1Klick): invitar más usuarios al workspace + revisar flujo de eliminar; poner el logo en el ADN. 2 links de inspiración UI descartados como ruido (Instagram post + svgl.app). 0 conceptos al Brain.
+
+## [2026-05-19] ingest | Inbox — 3 items procesados
+2 features/tareas creadas en Notion (1Klick Ads): módulo de contenido orgánico (generar posts texto+imagen por marca) + recomendación de cantidad de imágenes en generación según presupuesto de campaña. 1 link de inspiración UI (refero.design) descartado como ruido — no va al Brain. 0 conceptos.
+
+## [2026-05-18] ingest | Inbox — 3 items procesados
+3 features/tareas creadas en Notion (1Klick Ads): guardar historial de chats del copilot + pulir UI/funcionamiento; renombrar "ADN" por "Configuración" en el onboarding; crear campañas con nombre diferente (no repetido). 0 conceptos al Brain. 1 item (link refero.design — estilos clean SaaS) dejado en el inbox por decisión de Amauri.
+
 ## [2026-05-15] ingest | Inbox — 11 items procesados
 9 features/tareas creadas en Notion (1Klick): hover ícono `i` dashboard, pulir prompt servicios, pulir UI proyecto Yates (cliente real), pulir título paso generar imagen + textarea, quitar bloque CTR/CPM/ROAS de landing, revisar caché, skeleton loader Settings, Apple Pay/Google Pay checkout, bug pricing landing→app (Alta). 2 descartados: link x.com clear_graphics sin contexto, "checar docs Stripe en Supabase" descartado por Amauri. 0 conceptos al Brain.
 
