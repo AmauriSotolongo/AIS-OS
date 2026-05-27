@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-05-27] ingest | Inbox — 2 items procesados
+2 features/tareas creadas en Notion (1Klick Ads): bloquear programación de contenido orgánico con fecha anterior a hoy (validación en calendario de contenido) + segmentación de campañas de ads por ubicación geográfica. 0 conceptos al Brain.
+
 ## [2026-05-26] ingest | Inbox — 9 items procesados
 7 features/tareas creadas en Notion: 6 de 1Klick Ads (pulir prompts por nicho/real estate; exportar imágenes a Canva; editar plan mensual con IA antes de publicar; cambiar precios en landing; pulir copiloto en flujo de generar; Meta Library mostrar todas las pautas y recomendar anuncios de todas) + 1 de Digital Compass (landing recovery center, cliente). 2 descartados como ruido: reel de Jun Yuh (personal branding tier list) y "tipografía" (sin contexto). 0 conceptos al Brain.
 
