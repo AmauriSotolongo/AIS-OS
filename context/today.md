@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-26
+# Foco de hoy — 2026-05-27
 
-1. Cerrar el loop del módulo de contenido orgánico — editar el plan mensual con IA antes de publicar
-2. Cambiar precios en la landing (palanca de conversión)
-3. Pulir el copiloto en el flujo de generar
+1. Cerrar el onboarding de baló como cliente activo (call 10:00)
+2. Fixear el bug de invitados al workspace
+3. Cambiar precios en la landing (cerrar loop de pricing)
