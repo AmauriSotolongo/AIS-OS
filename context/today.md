@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-05-27
+# Foco de hoy — 2026-06-03
 
-1. Cerrar el onboarding de baló como cliente activo pagando (reunión 10:00)
-2. Cambiar precios en la landing — alinear pricing y destrabar conversión
-3. Preparar y cerrar la reunión Yakult (16:00) con siguiente paso definido
+1. Shipear autosave de campañas (no perder progreso) — quitar la fricción #1 de activación
+2. Quick wins de performance en producción — índices faltantes + N+1 en vistas pesadas
+3. Definir el plan de adquisición de los 27 días — cuántos faltan para 50 clientes y qué acción de ventas hoy

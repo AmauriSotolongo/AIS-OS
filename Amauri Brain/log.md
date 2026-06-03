@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-06-03] ingest | Inbox — 6 items procesados
+6 features/tareas creadas en Notion (1Klick Ads): editar publicaciones con IA; editar copy con IA; no perder progreso de campaña (autosave, Alta); drag & drop para generar imágenes con IA; probar flujo de invitación de partners; optimizar performance en producción (Alta, checklist del TikTok vt.tiktok.com/ZSxsWA9g6 — N+1, índices, SELECT *, paginación, main thread). TikTok transcrito vía whisper; raw descartado tras decisión de Amauri (va como tarea, no al Brain). 0 conceptos al Brain.
+
 ## [2026-05-27] ingest | Inbox — 2 items procesados
 2 features/tareas creadas en Notion (1Klick Ads): bloquear programación de contenido orgánico con fecha anterior a hoy (validación en calendario de contenido) + segmentación de campañas de ads por ubicación geográfica. 0 conceptos al Brain.
 
