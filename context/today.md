@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-06-03
+# Foco de hoy — 2026-07-24
 
-1. Shipear autosave de campañas (no perder progreso) — quitar la fricción #1 de activación
-2. Quick wins de performance en producción — índices faltantes + N+1 en vistas pesadas
-3. Definir el plan de adquisición de los 27 días — cuántos faltan para 50 clientes y qué acción de ventas hoy
+1. ~~Número real de clientes pagando 1Klick Ads~~ ✅ 17 clientes, MRR $16,000 MXN. Meta re-fechada a 30/nov.
+2. Cerrar "Integrar campañas a TikTok" — lleva semanas en progreso sin fecha de cierre
+3. Arrancar "Hacer reportes en 1KlickAds" — al menos el esqueleto de la vista

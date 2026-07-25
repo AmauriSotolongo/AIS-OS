@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-07-24] ingest | Inbox — 14 items procesados
+6 features/tareas creadas en Notion: Klicky en Telegram ("Agencia de marketing en tus bolsillos"); calendario de onboarding en el CRM (Alta); Google Ads + TikTok Ads en 1KlickAds (Alta); publicaciones orgánicas de TikTok; reportes en 1KlickAds (Alta); pulir Klicky. 2 libros nuevos a Lista de lectura desde el TikTok de Andrés Bilbao (Rappi): Los 7 hábitos (Covey) y Brain Rules (Medina) — los otros 3 (Hard Thing, Poor Charlie's Almanack, Atomic Habits) ya estaban. Post de Instagram descartado (carrusel sin títulos legibles). Descartados por Amauri: poner logo, logo AIAS, desbloquear almacén, "que pregunte lo mismo", modificar almacén/avión, proyecto Shark Tank, Panda Video. Raw del TikTok borrado tras decisión (va a lista de lectura, no al Brain). 0 conceptos al Brain.
+
 ## [2026-06-03] ingest | Inbox — 6 items procesados
 6 features/tareas creadas en Notion (1Klick Ads): editar publicaciones con IA; editar copy con IA; no perder progreso de campaña (autosave, Alta); drag & drop para generar imágenes con IA; probar flujo de invitación de partners; optimizar performance en producción (Alta, checklist del TikTok vt.tiktok.com/ZSxsWA9g6 — N+1, índices, SELECT *, paginación, main thread). TikTok transcrito vía whisper; raw descartado tras decisión de Amauri (va como tarea, no al Brain). 0 conceptos al Brain.
 

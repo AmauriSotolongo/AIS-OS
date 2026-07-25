@@ -18,6 +18,20 @@ Append-only record of meaningful decisions and why they were made. `/level-up` P
 
 Keep it terse. Future-you will thank present-you for capturing the *why*, not just the *what*.
 
+## 2026-07-24 — Re-fechar los 50 clientes: 30 de junio → 30 de noviembre 2026
+
+**Decision:** Mover el objetivo de 50 clientes activos pagando 1Klick Ads del 30 de junio al **30 de noviembre 2026**, sin cambiar el motor de adquisición. Meta mensual mínima: 8 clientes nuevos/mes.
+
+**Why:** Verificación contra Stripe (2026-07-24): 17 clientes activos, MRR $16,000 MXN + $69 USD, ritmo real de ~8 clientes/mes (mayo 1, junio 7, julio 9). El objetivo original pedía 50 en dos meses con un motor que da 8 — se falló por aritmética, no por ejecución. Julio es el mejor mes hasta ahora, así que la tracción es real; lo que estaba roto era la fecha. Los 33 restantes a 8/mes caen a finales de noviembre.
+
+**Qué me haría cambiar de opinión:** si un mes cae por debajo de 8 clientes nuevos, el problema deja de ser la fecha y pasa a ser el motor — ahí toca revisar adquisición, no re-fechar otra vez.
+
+**Alternatives considered:** Mantener el 30 de junio/octubre y duplicar el motor a ~16 clientes/mes (descartado hoy — exige una operación de ventas diaria que no existe y sacaría foco del producto). Bajar la meta de 50 a un número alcanzable en Q3 (descartado — 50 es la meta real del negocio, no un número de vanidad).
+
+**Owner:** Amauri.
+
+**Artifact:** `context/priorities.md` actualizado con el estado real de Stripe.
+
 ## 2026-05-06 — Skill `/meeting`: Granola → Notion Meeting Notes
 
 **Decision:** Construir skill L2 (`/meeting`) que recibe notas de Granola pegadas en chat, parsea los campos clave y crea una fila en la base de datos "Meeting Notes" de Notion. Amauri aprueba el preview antes de que se escriba.
