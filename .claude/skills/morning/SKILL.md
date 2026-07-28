@@ -25,8 +25,9 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 | Notion — activas | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
 | Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
 | Google Calendar | Eventos de hoy | `list_events` con `calendarId: primary`, `timeMin` = inicio del día hoy (00:00 local), `timeMax` = fin del día (23:59 local), `maxResults: 10`. Extraer título, hora inicio y duración. |
+| Stripe | Tracción real: suscripciones activas, MRR, trials, past_due, altas del mes | `stripe_api_read` con `GetSubscriptions` para `status: active` (limit 100), `trialing` y `past_due`. Si el resultado excede tokens, parsear el archivo en disco con `python3`. Calcular MRR normalizando anuales a mensual (`unit_amount / 12`). Separar por moneda — no sumar MXN con USD. |
 | Second Brain | `Amauri Brain/index.md` | Read directo |
-| Prioridades Q2 | `context/priorities.md` | Read directo |
+| Prioridades | `context/priorities.md` | Read directo |
 
 ## Relación con `/ingest`
 
@@ -47,6 +48,7 @@ Antes de recopilar datos, verificar que las tres fuentes externas estén autenti
 - **GitHub:** intentar `list_commits` en `AmauriSotolongo/ads-ai` con `perPage: 1`. Si responde → ✅. Si falla → ❌ GitHub.
 - **Notion:** intentar cualquier herramienta real de Notion (distinta de `mcp__notion__authenticate`). Si solo aparece la herramienta de auth → ❌ Notion.
 - **Google Calendar:** intentar `list_events`. Si responde con "requires authentication" o solo aparece la herramienta de auth → ❌ Calendar.
+- **Stripe:** intentar `GetSubscriptions` con `limit: 1`. Si responde → ✅. Si falla → ❌ Stripe.
 
 Si hay **una o más conexiones en ❌**, mostrar este bloque **antes** de continuar:
 
@@ -83,6 +85,7 @@ Lanzar todas las lecturas al mismo tiempo:
 - Búsqueda Notion de tareas activas (vista "Por estado")
 - Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
 - `list_events` en Google Calendar (eventos de hoy)
+- `GetSubscriptions` en Stripe (`active`, `trialing`, `past_due`)
 - Read `Amauri Brain/index.md`
 - Read `context/priorities.md`
 
@@ -123,6 +126,27 @@ Con toda la data, generar el brief siguiendo exactamente este formato:
 
 ---
 
+### Tracción
+
+Una tabla compacta con el estado real del negocio según Stripe:
+
+| | |
+|---|---|
+| Clientes activos | N (faltan X para 50) |
+| MRR | $N MXN + $N USD |
+| En trial | N |
+| Past due | N |
+| Altas este mes | N de 8 |
+| Última alta | fecha + días desde entonces |
+
+Debajo, **una sola línea** de lectura: ¿el mes va en ritmo para 8+ o no? Si la última alta fue hace 3+ días o hay 0 trials, decirlo aquí — el pipeline vacío es la señal temprana.
+
+Si Stripe no responde → "Sin acceso a Stripe. Números de `context/priorities.md` (verificados {fecha del archivo})."
+
+**Nunca sumar MXN con USD.** Reportar por separado.
+
+---
+
 ### Contexto técnico
 
 ¿Qué se movió **{ayer calculado}** en `ads-ai`? Agrupa commits por tema (UI polish, bugs, features). Una línea por grupo. Si no hay commits → "Sin actividad técnica ayer."
@@ -157,7 +181,7 @@ Si no hay ninguna tarea con fecha de cierre → "Sin cierres registrados esta se
 
 ### Señal de riesgo
 
-Una sola cosa concreta que podría bloquear el MVP (31 mayo) o los 50 clientes (30 junio). Incluir días restantes a cada deadline para dar urgencia real. Si no hay blocker → "Sin blocker visible — mantener ritmo."
+Una sola cosa concreta que podría bloquear la meta vigente en `context/priorities.md` (ese archivo es la fuente de verdad de deadlines — no asumir fechas viejas). Cruzar la sección Tracción contra las tareas activas: si todo el backlog es producto y no hay nada de adquisición, esa es la señal. Incluir días restantes al deadline para dar urgencia real. Si no hay blocker → "Sin blocker visible — mantener ritmo."
 
 ---
 
@@ -214,6 +238,10 @@ Solo una actualización de estado. Sin más preguntas.
 Si GitHub no está conectado:
 - Omitir "Contexto técnico" o poner "Sin actividad GitHub confirmada."
 - Todo lo demás igual. No avisar al inicio — es ruido.
+
+Si Stripe no responde:
+- Usar los números de `context/priorities.md` y marcar la fecha de última verificación.
+- No inventar altas del mes ni ritmo — si no hay dato fresco, decirlo.
 
 Si Google Calendar no responde:
 - Omitir "Agenda de hoy" o poner "Sin acceso al calendario."

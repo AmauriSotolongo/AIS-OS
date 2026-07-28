@@ -1,6 +1,6 @@
 # Prioridades — Q3/Q4 2026
 
-*Última verificación contra Stripe: 2026-07-24*
+*Última verificación contra Stripe: 2026-07-27 — sin cambios vs. 24/jul. 0 trials, 0 past_due.*
 
 ## Estado real hoy
 
