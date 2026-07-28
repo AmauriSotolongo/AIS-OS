@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-07-28] ingest | Inbox — 2 items procesados
+2 features/tareas creadas en Notion (1Klick Ads), ambas Medio: panel de monitoreo de uso por cliente en el CRM (último login, campañas creadas, inactivos — señal temprana de churn antes de que cancelen en Stripe); iconos de redes sociales en el plan orgánico de IA (esfuerzo Pequeño). 0 conceptos al Brain, 0 referencias. Inbox vaciado.
+
 ## [2026-07-27] ingest | Inbox — 2 items procesados
 2 features/tareas creadas en Notion (1Klick Ads), separadas por confirmación de Amauri: filtros en vista Panel; filtros en vista Campañas. Ambas Medio/Medio, con checklist de dimensiones de filtrado pendiente de definir. 0 conceptos al Brain, 0 referencias. Inbox vaciado.
 

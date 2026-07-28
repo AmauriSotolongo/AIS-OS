@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-07-27
+# Foco de hoy — 2026-07-28
 
-1. Escribir el resultado de los 6 demos de hoy antes del webinar de las 18:00 — quién cierra, quién no, por qué
-2. Calcular la tasa real demo→cliente de julio — 57 demos la semana pasada vs 9 clientes en el mes
-3. Definir el filtro de calificación en cal.com — el cuello de botella no es volumen, es quién entra
+1. Cerrar el seguimiento de las 4 demos de hoy el mismo día — link de pago o trial enviado antes de las 18:00
+2. Llenar el calendario de demos de la primera semana de agosto — mínimo 4 agendadas antes de irte
+3. Arrancar "Hacer reportes en 1KlickAds" en el bloque de la tarde — es lo que piden en demo para ver resultados
