@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-07-29] ingest | Inbox — 1 item procesado
+1 feature/tarea creada en Notion (1Klick Ads): pulir el registro de comisiones en el admin — aplica a comisiones de partners/resellers y de vendedores del equipo. Prioridad Alta, esfuerzo Medio, tipo Error + Pulir. Queda por reproducir el fallo exacto (persistencia vs cálculo vs display) y revisar comisiones históricas mal registradas. 0 conceptos al Brain, 0 referencias. Inbox vaciado.
+
 ## [2026-07-28] ingest | Inbox — 2 items procesados
 2 features/tareas creadas en Notion (1Klick Ads), ambas Medio: panel de monitoreo de uso por cliente en el CRM (último login, campañas creadas, inactivos — señal temprana de churn antes de que cancelen en Stripe); iconos de redes sociales en el plan orgánico de IA (esfuerzo Pequeño). 0 conceptos al Brain, 0 referencias. Inbox vaciado.
 
