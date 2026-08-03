@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-07-31
+# Foco de hoy — 2026-08-03
 
-1. Cerrar las 2 demos de hoy (Rafael 11:30, Eduardo 12:00) con siguiente paso definido y fecha
-2. Llenar la agenda de demos de la primera semana de agosto — mínimo 4 agendadas antes de las 18:00
-3. Verificar que el cron de créditos y el webhook de Stripe corrieron limpios en el cierre de mes
+1. Cerrar mínimo 3 de las 17 demos de hoy — agosto arranca 0 de 8.
+2. Registrar el resultado de cada demo al terminarla, no en bloque al final del día.
+3. Usar el bloque de 8:00–10:00 (único libre antes del primer demo) para dejar listo el link de checkout y el pitch de cierre.

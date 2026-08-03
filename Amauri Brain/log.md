@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-08-03] ingest | Inbox — 1 item procesado
+1 feature/tarea creada en Notion (1Klick Ads): mejorar el módulo de publicación orgánica dentro del producto. Amauri aclaró que es la funcionalidad del producto, no el contenido orgánico de marca. Prioridad Medio, esfuerzo Grande, tipo Solicitud de funciones. Queda como épica — falta definir qué parte del flujo está más débil (copy, calendario, publicación, métricas) y cuál es el criterio de "mejorado". 0 conceptos al Brain, 0 referencias. Inbox vaciado.
+
 ## [2026-07-31] ingest | Inbox — 1 item procesado
 1 feature/tarea creada en Notion (1Klick Ads): rediseñar el módulo de soporte de cards sueltas a tablero kanban con columnas por estado, estilo CRM. Prioridad Medio, esfuerzo Medio, tipo Solicitud de funciones. Queda por definir los estados exactos de las columnas y si la vista de cards se reemplaza o convive. 0 conceptos al Brain, 0 referencias. Inbox vaciado.
 
