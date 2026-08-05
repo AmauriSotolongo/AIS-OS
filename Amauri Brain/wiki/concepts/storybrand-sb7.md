@@ -9,7 +9,7 @@ updated: 2026-05-14
 # StoryBrand SB7
 
 > "Tu cliente no compra porque tu producto sea malo, no compra porque tu mensaje lo confunde."
-> — Donald Miller, *Building a Story Brand* (vía [[ramon-riva|Ramón Riva]])
+> — Donald Miller, *Building a Story Brand* (vía Ramón Riva)
 
 **Tipo:** Marketing / Messaging
 **Fuente:** `raw/2026-05-14-ramn-riva-video-by-ramonriva.md`

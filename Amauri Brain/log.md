@@ -4,6 +4,9 @@ Append-only. Each entry: `## [YYYY-MM-DD] operation | description`
 
 ---
 
+## [2026-08-05] ingest | Inbox — 11 items procesados
+8 features/tareas creadas en Notion. Producto 1Klick Ads: MCP para que el cliente opere campañas desde ChatGPT (Grande), integrar el CRM de WhatsApp de 1Klick Sales dentro de Ads (Grande, Alta), editor de imagen con lightbox en orgánico igual que en Ads (Medio), pulir UI del wizard de Google Ads (Pulir). CRM interno de ventas: transcritos de Granola ligados al lead (Medio), vista de notas y correo (Medio). Comercial: script de ventas para demos (Alta), separar cal.com en cuenta de venta y de onboarding (Pequeño). Dos items descartados por ya estar hechos: seguimiento al rey de la birria, exportar leads a GHL. Se fusionaron dos líneas del inbox (editar imagen en orgánico + lightbox) en una sola tarea. 1 concepto al Brain: autoridad-diferida-en-ventas, desde un reel de Alex Hormozi — presentarse como gerente y no como dueño, y usar "déjame consultarlo con el jefe" como palanca de negociación. Cross-linkeado con founder-led-sales, tolerancia-al-dolor-ventas y prospectar-vs-convencer. Aplicación concreta: meterlo como paso de manejo de objeción de precio en el script de ventas de demos. Raw en raw/2026-08-05-alex-hormozi-video-by-hormozi.md. "Crisp para soporte?" descartado por Amauri sin loguear como decisión. Queda 1 item en el inbox: link de x.com sin contexto.
+
 ## [2026-08-03] ingest | Inbox — 1 item procesado
 1 feature/tarea creada en Notion (1Klick Ads): mejorar el módulo de publicación orgánica dentro del producto. Amauri aclaró que es la funcionalidad del producto, no el contenido orgánico de marca. Prioridad Medio, esfuerzo Grande, tipo Solicitud de funciones. Queda como épica — falta definir qué parte del flujo está más débil (copy, calendario, publicación, métricas) y cuál es el criterio de "mejorado". 0 conceptos al Brain, 0 referencias. Inbox vaciado.
 

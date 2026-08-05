@@ -63,6 +63,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[four-minute-miles|Four Minute Miles]] — Eventos internos que demuestran que lo "imposible" es posible; resetean el mindset colectivo (1 source)
 - [[estacionalidad-es-bullshit|La Estacionalidad es Bullshit]] — Cuando cae la conversión, la respuesta es más funnel, no esperar (1 source)
 - [[ai-en-ventas-potencializa|AI en Ventas Potencializa]] — AI amplifica volumen; el que usa AI te deja sin trabajo (1 source)
+- [[autoridad-diferida-en-ventas|Autoridad Diferida en Ventas]] — "Déjame consultarlo con el jefe": negociar contra alguien que no está en la sala (1 source)
 
 ### Ventas — Estrategia & Mercado
 - [[ventas-agencias-no-operaciones|Vende a agencias, no a operaciones]] — Marketing tiene budget y autonomía (1 source)
@@ -87,4 +88,4 @@ Format: `[[Page]] — one-line summary (N sources)`
 
 ---
 
-*Last updated: 2026-05-14*
+*Last updated: 2026-08-05*
