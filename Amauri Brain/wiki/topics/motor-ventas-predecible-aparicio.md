@@ -10,7 +10,7 @@ updated: 2026-05-07
 
 **Fuente:** https://www.youtube.com/watch?v=-U84An-BtlE
 **Fecha:** 2026-05-07
-**Tipo:** Podcast / entrevista con [[santiago-aparicio|Santiago Aparicio]] (co-founder [[OnTop]]) y Andrés (contexto Rappi)
+**Tipo:** Podcast / entrevista con [[santiago-aparicio|Santiago Aparicio]] (co-founder [[ontop|OnTop]]) y Andrés (contexto Rappi)
 **Raw:** `raw/2026-05-07-experto-en-ventas-motor-predecible-santiago-aparicio.md`
 
 ## Resumen

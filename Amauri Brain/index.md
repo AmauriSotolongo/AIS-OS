@@ -16,7 +16,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 
 - [[1Klick]] — SaaS de automatización de ventas para PyMEs LATAM: Meta Ads + WhatsApp CRM (1 source)
 - [[Digital Compass]] — Consultora de IA para PyMEs en México y LATAM (1 source)
-- [[OnTop]] — SaaS de payroll internacional; abrió 110 países en 6 meses; caso de estudio de escalamiento agresivo (1 source)
+- [[ontop|OnTop]] — SaaS de payroll internacional; abrió 110 países en 6 meses; caso de estudio de escalamiento agresivo (1 source)
 
 ## Concepts
 

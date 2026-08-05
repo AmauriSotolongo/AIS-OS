@@ -10,7 +10,7 @@ updated: 2026-05-07
 
 > "Los mejores vendedores nunca convencen. Los mejores vendedores prospectan."
 
-**Rol:** Co-founder de [[OnTop]]
+**Rol:** Co-founder de [[ontop|OnTop]]
 **Background:** Vendedor en Rappi desde las primeras etapas; construyó y escaló fuerzas de ventas de ~100 personas
 
 ## Lo más relevante
