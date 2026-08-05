@@ -1,5 +1,5 @@
 # Foco de hoy — 2026-08-05
 
-1. Script de ventas v1 de 1KlickAds escrito y aplicado en las demos que queden del día
-2. Desenlace registrado de las 15 demos de hoy (cerró / seguimiento / perdida) para tener tasa de cierre real
-3. Conexión de Google Ads validada end-to-end con una cuenta real y cerrada la tarea "Meter Google Ads y TikTok Ads"
+1. Script de ventas v1 escrito y aplicado en las demos que quedan (14:00 → 17:30)
+2. Desenlace registrado de las 14 demos de hoy (cerró / seguimiento / perdida) para tener tasa de cierre real
+3. Evento de Brokers Bienes Raíces (18:00) cerrado con un CTA concreto y lista de asistentes capturada
