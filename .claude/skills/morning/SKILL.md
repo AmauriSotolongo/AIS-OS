@@ -25,9 +25,11 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 | Notion — activas | Tareas abiertas / en progreso | `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`. Leer el resultado completo — no usar búsqueda general porque trae tareas en "Listo" mezcladas con las activas. |
 | Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
 | Google Calendar | Eventos de hoy | `list_events` con `calendarId: primary`, `timeMin` = inicio del día hoy (00:00 local), `timeMax` = fin del día (23:59 local), `maxResults: 10`. Extraer título, hora inicio y duración. |
-| Stripe | Tracción real: suscripciones activas, MRR, trials, past_due, altas del mes | `stripe_api_read` con `GetSubscriptions` para `status: active` (limit 100), `trialing` y `past_due`. Si el resultado excede tokens, parsear el archivo en disco con `python3`. Calcular MRR normalizando anuales a mensual (`unit_amount / 12`). Separar por moneda — no sumar MXN con USD. |
+| Stripe | Tracción real: suscripciones activas, MRR, past_due, altas del mes | `stripe_api_read` con `GetSubscriptions` para `status: active` (limit 100) y `past_due`. **No consultar `trialing`** — 1Klick no vende con trial (ver nota abajo). Si el resultado excede tokens, parsear el archivo en disco con `python3`. Calcular MRR normalizando anuales a mensual (`unit_amount / 12`). Separar por moneda — no sumar MXN con USD. |
 | Second Brain | `Amauri Brain/index.md` | Read directo |
 | Prioridades | `context/priorities.md` | Read directo |
+
+**1Klick no tiene trials.** El modelo es pago directo desde el día uno: el cliente entra pagando o no entra. Nunca reportar una fila de "En trial", nunca consultar `status: trialing`, y nunca leer "0 trials" como pipeline vacío — es el modelo funcionando como debe. La señal temprana de adquisición son los **días desde la última alta**, no los trials.
 
 ## Relación con `/ingest`
 
@@ -85,7 +87,7 @@ Lanzar todas las lecturas al mismo tiempo:
 - Búsqueda Notion de tareas activas (vista "Por estado")
 - Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
 - `list_events` en Google Calendar (eventos de hoy)
-- `GetSubscriptions` en Stripe (`active`, `trialing`, `past_due`)
+- `GetSubscriptions` en Stripe (`active`, `past_due`)
 - Read `Amauri Brain/index.md`
 - Read `context/priorities.md`
 
@@ -134,12 +136,13 @@ Una tabla compacta con el estado real del negocio según Stripe:
 |---|---|
 | Clientes activos | N (faltan X para 50) |
 | MRR | $N MXN + $N USD |
-| En trial | N |
 | Past due | N |
 | Altas este mes | N de 8 |
 | Última alta | fecha + días desde entonces |
 
-Debajo, **una sola línea** de lectura: ¿el mes va en ritmo para 8+ o no? Si la última alta fue hace 3+ días o hay 0 trials, decirlo aquí — el pipeline vacío es la señal temprana.
+Sin fila de "En trial" — 1Klick no vende con trial.
+
+Debajo, **una sola línea** de lectura: ¿el mes va en ritmo para 8+ o no? Si la última alta fue hace 3+ días, decirlo aquí — ese hueco es la señal temprana de que el motor se frenó.
 
 Si Stripe no responde → "Sin acceso a Stripe. Números de `context/priorities.md` (verificados {fecha del archivo})."
 
