@@ -6,32 +6,66 @@ MCP: [taxuspt/garmin_mcp](https://github.com/taxuspt/garmin_mcp) — envuelve la
 
 ## Paso 1 — Autenticar una sola vez
 
-El servidor no guarda usuario ni contraseña. Autenticas una vez en la terminal y quedan tokens OAuth en `~/.garminconnect`.
+El servidor no guarda usuario ni contraseña. Autenticas una vez en la terminal y quedan tokens OAuth en disco.
 
+### Requisito: `uv`
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+Se instala en `C:\Users\<usuario>\.local\bin`. **Cierra y reabre PowerShell** para que el PATH lo tome. Si no quieres reabrir, en la sesión actual:
+```powershell
+$env:Path = "C:\Users\$env:USERNAME\.local\bin;$env:Path"
+```
+
+**macOS / Linux:**
 ```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+También necesitas Git instalado ([git-scm.com](https://git-scm.com/downloads)) — el comando instala desde `git+https://`.
+
+### Correr la auth
+
+```
 uvx --python 3.12 --from git+https://github.com/Taxuspt/garmin_mcp garmin-mcp-auth
 ```
 
-Te pide:
-- Email de Garmin Connect
-- Contraseña
-- Código MFA (si lo tienes activo)
+Te pide email, contraseña y código MFA si lo tienes activo. La primera vez tarda un par de minutos (descarga Python 3.12 y 39 paquetes).
 
-Requisitos: Python 3.12 y `uv` instalado (`curl -LsSf https://astral.sh/uv/install.sh | sh`).
+Tokens guardados en:
+- Windows: `C:\Users\<usuario>\.garminconnect`
+- macOS / Linux: `~/.garminconnect`
 
 Verificar cuando quieras:
-
-```bash
+```
 uvx --python 3.12 --from git+https://github.com/Taxuspt/garmin_mcp garmin-mcp-auth --verify
 ```
 
-⚠️ Los tokens duran ~6 meses. Cuando expiren, vuelve a correr el comando de arriba. Si `/morning` empieza a fallar en la sección de energía, esto es lo primero que hay que revisar.
+⚠️ Los tokens duran ~6 meses. Cuando expiren, corre el comando otra vez con `--force-reauth`. Si `/morning` empieza a fallar en la sección de energía, esto es lo primero que hay que revisar.
+
+### Si falla
+
+**`429 — IP rate limited by Garmin`** — Garmin bloqueó tu IP, no es tu contraseña. El CLI reporta "Invalid email or password" aunque el error real sea 429; ignora ese mensaje y mira las líneas de arriba. Espera 15-30 min sin reintentar (cada intento extiende el bloqueo), apaga la VPN si la tienes, o conéctate al hotspot del celular para salir por otra IP.
+
+Ojo: puedes ver 429 en las líneas de `mobile+cffi` / `mobile+requests` y aun así terminar en `✓ Authentication successful`. Eso es normal — el fallback funcionó. Lo único que decide es la línea `Logged in as:`.
+
+**`uvx no se reconoce`** — no reabriste la terminal después de instalar `uv`. Ver arriba.
 
 ## Paso 2 — El MCP ya está configurado
 
 Vive en `.mcp.json` en la raíz del repo, así que aplica a cualquier sesión de Claude Code abierta en AIS-OS. No hay credenciales en el archivo — solo el comando y la lista de herramientas activas.
 
 Abre una sesión nueva de Claude Code en el repo y aprueba el servidor cuando lo pregunte (`/mcp` para ver el estado).
+
+Si el servidor no arranca y `/mcp` marca `failed`, es que Claude Code no resuelve `uvx` desde el PATH. Cambia `command` en `.mcp.json` por la ruta completa:
+
+```json
+"command": "C:\\Users\\Usuario\\.local\\bin\\uvx.exe"
+```
+
+**WSL:** los tokens viven en el home de quien corrió la auth. Si autenticaste en PowerShell pero corres Claude Code dentro de WSL, el servidor no los encuentra — repite el Paso 1 dentro de WSL, o apunta `GARMINTOKENS` al directorio de Windows montado.
 
 ## Paso 3 — Verificar
 

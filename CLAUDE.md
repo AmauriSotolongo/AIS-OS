@@ -68,7 +68,7 @@ Match the register in `references/voice.md`. Directo y genuino. Frases cortas. N
 | Project / task tracking | Notion | MCP (OAuth) |
 | Meeting intelligence | Granola → Notion | manual (paste transcript) |
 | Knowledge / files | Google Drive + Notion | MCP (OAuth) |
-| Salud / energía | Garmin Connect | MCP (OAuth tokens) — falta auth inicial |
+| Salud / energía | Garmin Connect | MCP (OAuth tokens) |
 
 See `connections.md` for auth status and last-checked dates. Run `/audit` to see freshness and gaps.
 
