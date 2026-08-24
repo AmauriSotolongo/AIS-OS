@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "garmin": {
+      "command": "uvx",
+      "args": [
+        "--python",
+        "3.12",
+        "--from",
+        "git+https://github.com/Taxuspt/garmin_mcp",
+        "garmin-mcp"
+      ],
+      "env": {
+        "GARMIN_ENABLED_TOOLS": "get_stats,get_sleep_summary,get_stress_summary,get_body_battery,get_hrv_data,get_morning_training_readiness,get_training_status,get_rhr_day,get_daily_steps,get_weekly_stress,get_activities"
+      }
+    }
+  }
+}
