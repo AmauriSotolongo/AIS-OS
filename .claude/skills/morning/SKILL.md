@@ -1,6 +1,6 @@
 ---
 name: morning
-description: Brief diario de CTO. Agrega GitHub (commits 24h) + Notion (tareas abiertas) + Google Calendar (eventos de hoy) + Second Brain + prioridades Q2 y genera un resumen de arranque estructurado. Corre cada mañana antes de arrancar el trabajo.
+description: Brief diario de CTO. Agrega GitHub (commits 24h) + Notion (tareas abiertas) + Google Calendar (eventos de hoy) + Garmin (sueño y energía) + Second Brain + prioridades Q2 y genera un resumen de arranque estructurado. Corre cada mañana antes de arrancar el trabajo.
 trigger: "/morning", "dame mi brief", "qué tengo hoy", "arrancamos", "brief de hoy"
 bike-method-phase: 1  # Phase 1 — Training wheels. Corre manualmente cada mañana.
 three-ms-attribution: |
@@ -26,6 +26,7 @@ El repo principal de 1KlickAds es `AmauriSotolongo/ads-ai`. Siempre arranca por 
 | Notion — cerradas | Tareas completadas con fecha de cierre | `notion-query-database-view` con la vista "Cerradas esta semana": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=35768a705e1581b99a20000cfbca8978`. Filtrar en síntesis las que tienen `Fecha de cierre` en los últimos 7 días. |
 | Google Calendar | Eventos de hoy | `list_events` con `calendarId: primary`, `timeMin` = inicio del día hoy (00:00 local), `timeMax` = fin del día (23:59 local), `maxResults: 10`. Extraer título, hora inicio y duración. |
 | Stripe | Tracción real: suscripciones activas, MRR, past_due, altas del mes | `stripe_api_read` con `GetSubscriptions` para `status: active` (limit 100) y `past_due`. **No consultar `trialing`** — 1Klick no vende con trial (ver nota abajo). Si el resultado excede tokens, parsear el archivo en disco con `python3`. Calcular MRR normalizando anuales a mensual (`unit_amount / 12`). Separar por moneda — no sumar MXN con USD. |
+| Garmin | Sueño de anoche, body battery, estrés de ayer | `get_sleep_summary(date: hoy)`, `get_body_battery(start_date: hoy, end_date: hoy)`, `get_stress_summary(date: ayer)`. Las tres en paralelo. Garmin registra el sueño bajo la fecha de **despertar**, así que anoche se consulta con la fecha de **hoy**. |
 | Second Brain | `Amauri Brain/index.md` | Read directo |
 | Prioridades | `context/priorities.md` | Read directo |
 
@@ -51,6 +52,7 @@ Antes de recopilar datos, verificar que las tres fuentes externas estén autenti
 - **Notion:** intentar cualquier herramienta real de Notion (distinta de `mcp__notion__authenticate`). Si solo aparece la herramienta de auth → ❌ Notion.
 - **Google Calendar:** intentar `list_events`. Si responde con "requires authentication" o solo aparece la herramienta de auth → ❌ Calendar.
 - **Stripe:** intentar `GetSubscriptions` con `limit: 1`. Si responde → ✅. Si falla → ❌ Stripe.
+- **Garmin:** no verificar por separado. Se chequea implícito en el Paso 1 — si las lecturas fallan, la sección Energía se omite en silencio (ver Modo degradado). No es motivo para mostrar el bloque de conexiones faltantes.
 
 Si hay **una o más conexiones en ❌**, mostrar este bloque **antes** de continuar:
 
@@ -88,6 +90,7 @@ Lanzar todas las lecturas al mismo tiempo:
 - Búsqueda Notion de tareas cerradas (vista "Cerradas esta semana")
 - `list_events` en Google Calendar (eventos de hoy)
 - `GetSubscriptions` en Stripe (`active`, `past_due`)
+- `get_sleep_summary`, `get_body_battery` y `get_stress_summary` en Garmin
 - Read `Amauri Brain/index.md`
 - Read `context/priorities.md`
 
@@ -163,9 +166,33 @@ Al final, una línea con el tiempo disponible estimado para trabajo profundo: bl
 
 ---
 
+### Energía
+
+Una sola línea con los datos de Garmin, seguida de una línea de lectura. Nada más — esto es un modulador del día, no un reporte de salud.
+
+```
+Sueño 6h12 (score 68) · Body Battery 71 · Estrés ayer 38 (medio)
+→ [lectura]
+```
+
+Reglas para la lectura (elegir **una**, la que aplique primero):
+
+- **Sueño < 6h o Body Battery < 40** → día de batería corta. Recomendar mover el outcome más pesado cognitivamente al primer bloque y no encimar demos en la tarde. Decirlo en una línea, sin sermón.
+- **Estrés de ayer alto (promedio > 50) dos días seguidos** → señal de acumulación. Mencionarlo solo si se repite; un día suelto es ruido.
+- **Sueño ≥ 7h y Body Battery > 70** → día para atacar lo difícil. Nombrar cuál de los Top 3 merece ese arranque.
+- **Todo en rango normal** → una línea neutra. No inventar preocupación donde no la hay.
+
+Si falta alguna de las tres métricas, reportar las que sí llegaron y omitir el resto sin anotar el hueco.
+
+**No es consejo médico.** Es contexto operativo: cómo ordenar el día con la energía que hay. Nunca sugerir tratamientos, suplementos ni diagnósticos, ni interpretar métricas como síntomas.
+
+---
+
 ### Top 3 Outcomes de hoy
 
-Tres resultados concretos que deben estar hechos al final del día, priorizados contra los deadlines de mayo/junio **y contra el tiempo real disponible en el calendario**. Para cada uno: qué es, por qué hoy y qué desbloquea. Si uno bloquea a otro, marcarlo. Formato: **negrita el outcome**, luego una línea de contexto.
+Tres resultados concretos que deben estar hechos al final del día, priorizados contra los deadlines de mayo/junio, **contra el tiempo real disponible en el calendario** y **contra la energía de la sección anterior**. Para cada uno: qué es, por qué hoy y qué desbloquea. Si uno bloquea a otro, marcarlo. Formato: **negrita el outcome**, luego una línea de contexto.
+
+El orden importa: con batería corta, el outcome más pesado va primero, cuando queda reserva. Con batería alta, se ataca lo que se ha estado posponiendo por difícil.
 
 ---
 
@@ -250,9 +277,15 @@ Si Google Calendar no responde:
 - Omitir "Agenda de hoy" o poner "Sin acceso al calendario."
 - Los Top 3 Outcomes se priorizan sin considerar tiempo disponible.
 
+Si Garmin no responde (tokens expirados, reloj sin sincronizar, servidor caído):
+- Omitir la sección "Energía" completa. En silencio — sin avisar, sin línea de disculpa.
+- Los Top 3 Outcomes se priorizan solo contra tiempo disponible.
+- Excepción: si falla **tres días seguidos**, agregar una sola línea al pie del brief — "Garmin lleva 3 días sin datos. Revisa `references/garmin-setup.md` — probablemente expiraron los tokens." Los tokens duran ~6 meses.
+
 ## Notas de implementación
 
 - No inventar información. Si una fuente no responde o está vacía, decirlo en una línea.
 - El brief debe caber en una pantalla. Si algo no cabe, es demasiado largo.
 - Para Notion: priorizar resultados con "1Klick" en el título sobre tareas generales.
 - Si Amauri corrige un dato en el chat (repo, tarea, fecha), incorporarlo al brief actualizado sin pedir confirmación.
+- **Los datos de Garmin no salen del brief.** No van a Notion, no van al Brain, no van a correos ni a contenido. Se leen, se usan para ordenar el día, y ahí mueren. Si Amauri pide explícitamente registrarlos en algún lado, ahí sí.

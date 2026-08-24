@@ -93,11 +93,18 @@ Para activar más, agrega el nombre a `GARMIN_ENABLED_TOOLS` en `.mcp.json`. Lis
 
 ## Uso en el AIOS
 
-- `/morning` — cruza sueño y body battery contra la agenda del día. Día de demos con 4 horas de sueño no se ataca igual.
-- `/eod` — registra si el día quemó más de lo que aportó.
-- Consultas sueltas — *"¿cómo viene mi estrés esta semana?"*
+Ya está cableado en dos skills:
+
+**`/morning`** — sección **Energía**, entre la agenda y los Top 3 Outcomes. Lee sueño de anoche, body battery y estrés de ayer. Una línea de datos, una de lectura. Con batería corta el outcome más pesado va al primer bloque; con batería alta se ataca lo que llevas posponiendo. Si Garmin no responde, la sección desaparece en silencio.
+
+**`/eod`** — línea **Costo del día**. Cruza la caída de body battery contra las tareas cerradas. Día caro sin cierres es una señal; día caro con cierres es solo un martes.
+
+Consultas sueltas también sirven: *"¿cómo viene mi estrés esta semana?"*
+
+Garmin registra el sueño bajo la fecha de **despertar** — anoche se consulta con la fecha de hoy.
 
 ## Notas
 
 - Todo es lectura para lo que tenemos activo. Las herramientas de escritura (crear workouts, subir actividades) están fuera de la allowlist.
-- Datos de salud: no los saques del AIOS ni los pegues en contenido público sin decisión explícita.
+- **Los datos de salud no salen del chat.** Ni a Notion, ni al Brain, ni al correo de cofundadores del `/eod`, ni a contenido. Está escrito explícitamente en ambas skills. Si algún día quieres registrarlos en algún lado, pídelo — no pasa por default.
+- Nada de esto es consejo médico. Es contexto operativo para ordenar el día.

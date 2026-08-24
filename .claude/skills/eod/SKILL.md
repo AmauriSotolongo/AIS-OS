@@ -1,6 +1,6 @@
 ---
 name: eod
-description: Cierre de día para CTO. Cruza commits del día con tareas en progreso, sugiere cuáles marcar como Listo, y las cierra con confirmación. Un run = tracking al día en < 5 minutos.
+description: Cierre de día para CTO. Cruza commits del día con tareas en progreso, sugiere cuáles marcar como Listo, y las cierra con confirmación. Cierra con una línea de costo energético (Garmin). Un run = tracking al día en < 5 minutos.
 trigger: "/eod", "cierre del día", "qué hice hoy", "cerrar tareas", "fin del día"
 bike-method-phase: 1
 ---
@@ -17,8 +17,9 @@ Lanzar al mismo tiempo:
 - `list_commits` en `AmauriSotolongo/ads-ai` (repo de 1KlickAds), `perPage: 20` — rama `main`
 - `list_commits` en `AmauriSotolongo/ads-ai` (repo de 1KlickAds), `perPage: 10`, `sha: develop` — rama `develop`
 - `notion-query-database-view` con la vista "Por estado": `https://www.notion.so/2e968a705e1580239743c64f06d1d853?v=2e968a705e1580508bee000c51542a71`
+- `get_body_battery(start_date: hoy, end_date: hoy)` y `get_stress_summary(date: hoy)` en Garmin — para la línea de costo del día. Si fallan, se omite esa línea sin avisar.
 
-**Importante:** `main` casi siempre excede el límite de tokens y se guarda en un archivo. Después de recibir los tres resultados, parsear **ambas ramas** con Bash sin excepción — incluso si el resultado inline parece legible. Esto garantiza que ambas ramas siempre se lean completas:
+**Importante:** `main` casi siempre excede el límite de tokens y se guarda en un archivo. Después de recibir los resultados de GitHub, parsear **ambas ramas** con Bash sin excepción — incluso si el resultado inline parece legible. Esto garantiza que ambas ramas siempre se lean completas:
 
 ```bash
 # Para cada rama que excedió tokens (ruta devuelta en el mensaje de error):
@@ -78,10 +79,20 @@ Temas: [resumen de 1 línea por área]  ← omitir si no hay commits
 
 ---
 
-¿Cierro las ✅? ¿Y las ❓?
+**Costo del día:** Body Battery {inicio} → {final} ({delta}) · Estrés promedio {N}  ← omitir la línea entera si Garmin no respondió
+{una línea de lectura, solo si hay algo que decir}
 ```
 
 Si no hay commits y no hay tareas que proponer → mostrar solo las ya cerradas y preguntar "¿Algo más que cerrar hoy?"
+
+**Sobre la línea de costo del día:** cruza lo que se produjo contra lo que costó. La lectura solo se escribe si aporta:
+
+- Caída de body battery > 60 puntos con 0 tareas cerradas → "Día caro: se quemó batería sin cerrar nada. ¿Fue reunión o fue bloqueo?"
+- Caída fuerte con varias tareas cerradas → "Día caro pero productivo."
+- Estrés promedio > 50 tres días seguidos → mencionarlo una vez. Un día suelto no se comenta.
+- Todo en rango → sin lectura. Solo la línea de datos.
+
+Nunca sugerir tratamientos, suplementos ni diagnósticos. Es contabilidad de energía, no consejo médico.
 
 Esperar respuesta antes de escribir a Notion.
 
@@ -102,6 +113,8 @@ Si Amauri confirma, crear un borrador con `create_draft` en Gmail:
 - **Para:** `digitalcompass.ia@gmail.com`, `gdelreal2@gmail.com` (ambos en un solo borrador)
 - **Asunto:** Cierre del día — {fecha larga, ej. "6 de mayo 2026"}
 - **Cuerpo:** abrir con "Hola, soy el asistente de Amauri. Te paso el cierre del día." Después: resumen directo — commits del día (agrupados por tema, no listados por SHA), tareas cerradas y qué sigue en progreso. Cerrar con "Saludos." Tono natural, sin ceremonia. **Nunca firmar como Amauri** — el correo lo manda el asistente en su nombre.
+
+**Nunca incluir datos de Garmin en el correo.** Sueño, body battery, estrés y frecuencia cardíaca no salen del chat — no van a los cofundadores, ni a Notion, ni al Brain, ni a contenido. Son de Amauri y de nadie más.
 
 Nota: solo se puede crear el borrador, no enviarlo directamente. Avisar a Amauri que está en Gmail listo para enviar.
 
@@ -128,5 +141,6 @@ Sin resumen largo. Sin ceremonia.
 - No buscar commits para tareas no-código (cotizaciones, propuestas, PDFs, reuniones, gestiones externas). No anotar "sin commit" — es obvio y genera ruido. Solo listar el nombre.
 - Un commit que trabaja sobre componentes relacionados a una tarea ya matcheada (ej. refactor de un componente dentro del mismo flujo) cuenta como cubierto por esa tarea. No reportar como "commit sin tarea" salvo que sea trabajo genuinamente nuevo sin ninguna tarea en Notion.
 - No crear tareas nuevas, no tocar el Brain, no generar contenido. Solo cerrar.
+- Los datos de Garmin se leen y se usan en la línea de costo del día. No se guardan en ningún lado.
 - Commits en `develop` cuentan igual que en `main` — trabajo hecho es trabajo hecho. No bloquear el cierre por rama.
 - Si el trabajo está en `develop` y Amauri lo confirma → cerrar la tarea sin pedir merge primero.
