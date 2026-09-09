@@ -125,3 +125,39 @@ Index actualizado con 5 páginas. Wiki operativo.
 Sistema iniciado. Estructura de carpetas creada. Schema definido en CLAUDE.md.
 Seed entities creadas desde context/ del AIS-OS: Amauri Sotolongo, 1Klick, Digital Compass.
 Index y log inicializados. Listo para primer ingest.
+
+## [2026-09-09] ingest | Inbox — 3 reels procesados, 0 al Brain
+
+3 reels de Facebook (Ryan Deiss) transcritos con transcribe_reel.py — yt-dlp maneja Facebook igual que Instagram.
+Los 3 resultaron ser listas de recomendación de libros, sin concepto propio.
+Decisión de Amauri: solo lista de lectura, nada al Brain.
+12 libros capturados en references/lista-lectura.md (marketing, contratación, sistemas).
+Staging limpiado. 3 links borrados del Inbox. Wiki sin cambios.
+
+## [2026-09-09] ingest | Inbox — 2 conceptos creados
+
+Conceptos: [[mundo-es-de-los-duenos]], [[liderar-con-empatia]].
+Ambos capturados como frases sueltas sin fuente. Desarrollo marcado en cada página como
+lectura del AIOS, no dictado de Amauri — refinar cuando aparezca el origen.
+Resuelta la tensión aparente con [[manage-through-work]]: empatía como calibración
+(saber lo que cuesta), no como terapia. Síntesis documentada en liderar-con-empatia.
+Index actualizado (2 páginas nuevas). 2 líneas borradas del Inbox.
+
+## [2026-09-09] ingest | Inbox — 6 tareas creadas en Notion
+
+Features/tareas creadas (ninguna al Brain): Analytics en 1Klick Ads, Inbox / Comentarios,
+Propuesta de cambio de isotipo, Destinos de campaña en TikTok Ads, Bug de conexión TikTok
+→ Dashboard Zernio (Alta), Checar correos de Supabase.
+Tres se crearon con scope abierto (Analytics, Inbox/Comentarios, isotipo) — la duda queda
+anotada en la descripción de cada una, no en el chat.
+Traslape flaggeado: "Analytics en 1Klick Ads" vs. la tarea existente "Hacer reportes en
+1KlickAds" — fusionar si resultan ser lo mismo.
+6 líneas borradas del Inbox. Queda 1 item pendiente: "Hacer app 1klickads".
+
+## [2026-09-09] ingest | Inbox — cerrado (7ma tarea creada)
+
+"Hacer app de 1KlickAds" creada con scope abierto: las 3 opciones (nativa / PWA / wrapper)
+quedan documentadas en la descripción con su costo, más la pregunta que las decide
+("¿qué hace la app que la web no?"). Esfuerzo en Grande como default conservador.
+Inbox vacío. Total del día: 2 conceptos al Brain, 7 tareas a Notion, 12 libros a lista de
+lectura, 3 reels descartados tras transcribir.
