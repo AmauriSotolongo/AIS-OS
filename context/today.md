@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-09-09
+# Foco de hoy — 2026-09-10
 
-1. Recuperar los 3 past_due ($3,600 MXN/mes) — pasaron de 1 a 3 desde el 10 de agosto
-2. Cerrar mínimo 2 de las 7 demos de hoy (12:30–16:00)
-3. Diagnosticar el hueco de 3 días sin alta y meter más leads al funnel de demos
+1. Recuperar los 3 past_due de Stripe ($3,600 MXN/mes en riesgo) antes de las 12:00
+2. Cerrar al menos 1 de las 6 demos de hoy y registrar el outcome de cada una
+3. Cambiar el head de la landing a "1Klickads | Marketing en piloto automático"

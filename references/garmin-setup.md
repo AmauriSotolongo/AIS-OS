@@ -19,10 +19,17 @@ Se instala en `C:\Users\<usuario>\.local\bin`. **Cierra y reabre PowerShell** pa
 $env:Path = "C:\Users\$env:USERNAME\.local\bin;$env:Path"
 ```
 
-**macOS / Linux:**
+**macOS (Homebrew — recomendado):**
+```bash
+brew install uv
+```
+Queda en `/opt/homebrew/bin`, que ya está en el PATH, así que Claude Code lo resuelve sin tocar `.mcp.json`.
+
+**macOS / Linux (instalador de Astral):**
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+Queda en `~/.local/bin`. **Cierra y reabre la terminal** para que el PATH lo tome.
 
 También necesitas Git instalado ([git-scm.com](https://git-scm.com/downloads)) — el comando instala desde `git+https://`.
 
@@ -33,6 +40,8 @@ uvx --python 3.12 --from git+https://github.com/Taxuspt/garmin_mcp garmin-mcp-au
 ```
 
 Te pide email, contraseña y código MFA si lo tienes activo. La primera vez tarda un par de minutos (descarga Python 3.12 y 39 paquetes).
+
+⚠️ **Córrelo en una terminal real** (Terminal.app, iTerm, PowerShell) — no con el prefijo `!` dentro de Claude Code. Ese prefijo no engancha un TTY, así que el prompt de email revienta con `EOFError: EOF when reading a line`. El CLI sí lee `GARMIN_EMAIL` y `GARMIN_PASSWORD_FILE` del entorno, pero el código MFA siempre pasa por `input()` — no hay ruta 100% no interactiva.
 
 Tokens guardados en:
 - Windows: `C:\Users\<usuario>\.garminconnect`
@@ -52,6 +61,8 @@ uvx --python 3.12 --from git+https://github.com/Taxuspt/garmin_mcp garmin-mcp-au
 Ojo: puedes ver 429 en las líneas de `mobile+cffi` / `mobile+requests` y aun así terminar en `✓ Authentication successful`. Eso es normal — el fallback funcionó. Lo único que decide es la línea `Logged in as:`.
 
 **`uvx no se reconoce`** — no reabriste la terminal después de instalar `uv`. Ver arriba.
+
+**`/mcp` marca garmin como `failed` con `ENOENT: Executable not found in $PATH: uvx`** — `uv` no está instalado en esa máquina, o está en un directorio fuera del PATH. Verifica con `which uvx`. Si no devuelve nada, instálalo (ver arriba). Los tokens y el `uv` son por máquina: autenticar en una Mac no sirve para otra.
 
 ## Paso 2 — El MCP ya está configurado
 

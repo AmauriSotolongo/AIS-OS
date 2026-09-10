@@ -161,3 +161,6 @@ quedan documentadas en la descripción con su costo, más la pregunta que las de
 ("¿qué hace la app que la web no?"). Esfuerzo en Grande como default conservador.
 Inbox vacío. Total del día: 2 conceptos al Brain, 7 tareas a Notion, 12 libros a lista de
 lectura, 3 reels descartados tras transcribir.
+
+## [2026-09-10] ingest | Inbox — 6 items procesados
+Conceptos creados: 0. Referencias: 0. Features/tareas creadas en Notion: 5 (1 de 1Klickads, 4 de landing). 1 item descartado por redundante ("actualizar web").
