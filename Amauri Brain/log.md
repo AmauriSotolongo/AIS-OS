@@ -164,3 +164,10 @@ lectura, 3 reels descartados tras transcribir.
 
 ## [2026-09-10] ingest | Inbox — 6 items procesados
 Conceptos creados: 0. Referencias: 0. Features/tareas creadas en Notion: 5 (1 de 1Klickads, 4 de landing). 1 item descartado por redundante ("actualizar web").
+
+## [2026-09-17] ingest | Inbox — 3 items procesados
+Conceptos creados: 1 ([[servant-leadership-cuidar-no-mandar]], de TikTok @danielbilbao).
+Referencias: 0 — el checklist de @tomyespinosa se convirtió en tarea accionable en vez de página de Brain, por decisión de Amauri ("la referencia es meter analytics, mete las herramientas a 1klickads").
+Tareas creadas en Notion: 2 (recomendaciones de Klicky en campañas; instrumentar analítica en 1KlickAds).
+2 TikToks transcritos a raw/. Nota: el segundo (danielbilbao) falló con transcribe_reel.py por selección de formato de yt-dlp; se descargó manual con `-f "ba/b"` y se transcribió aparte. Candidato a arreglo en el script.
+Inbox vaciado.

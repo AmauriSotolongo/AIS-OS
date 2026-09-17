@@ -41,6 +41,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[mentalidad-dificil-no-imposible|Lo difícil no es imposible]] — Si lo crees imposible nunca lo intentas (1 source)
 - [[mundo-es-de-los-duenos|Este mundo es de los dueños]] — El dueño y el que cumple un rol juegan juegos distintos; decide, ejecuta y responde (1 source)
 - [[liderar-con-empatia|Liderar con empatía]] — Empatía no es suavidad, es calibración: saber lo que cuesta porque lo hiciste (1 source)
+- [[servant-leadership-cuidar-no-mandar|Servant leadership — cuidar, no mandar]] — El motivo antes que el método: ¿quieres poder o quieres ayudar? (1 source)
 
 ### Producto & Experiencia
 - [[11-star-experience|11-Star Experience]] — Framework: imaginar 10 estrellas para que 6-7 sea alcanzable; ahí vive el PMF (1 source)
