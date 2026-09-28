@@ -32,6 +32,32 @@ Fuente: Ryan Deiss — reel "I spent 15 years studying systems" (2026-09-09)
 - [ ] **Work the System** — Sam Carpenter · más táctico que el E-Myth
 - [ ] **Get Scalable** — Ryan Deiss · el suyo propio
 
+## Mapa de estudio de marketing
+
+Fuente: @jonascastromp4 — carrusel IG "Como estudar Marketing?" (2026-09-28). Orden sugerido: empezar por la ciencia de cómo crecen las marcas y luego elegir rama (Branding / Growth / Contenido).
+
+- [ ] **How Brands Grow** — Byron Sharp · *empieza aquí*: la ciencia de cómo crecen las marcas
+- [ ] **A Revolução do Branding** — Ana Couto · Branding
+- [ ] **Breakthrough Advertising** — Eugene Schwartz · Copy *(ya está arriba en Marketing & copy)*
+- [ ] **Ogilvy on Advertising** — David Ogilvy · Big ideas *(ya está arriba en Marketing & copy)*
+- [ ] **La Vaca Púrpura (Purple Cow)** — Seth Godin · Big ideas
+- [ ] **Hacking Growth** — Sean Ellis & Morgan Brown · Growth
+- [ ] **Traffic Secrets** — Russell Brunson · Tráfico
+- [ ] **Expert Secrets** — Russell Brunson · Funnels (en comentarios sugieren *DotCom Secrets* para funnels)
+- [ ] **This is Marketing** — Seth Godin · Contenido
+- [ ] **Content Inc.** — Joe Pulizzi · Creación de contenido
+- [ ] **Building a StoryBrand** — Donald Miller · Storytelling (ya en el Brain: [[storybrand-sb7]])
+
+## Carácter & disciplina
+
+Fuente: @elmodolobo_ — carrusel IG "todo lo que consumes moldea lo que deseas" (2026-09-28)
+
+- [ ] **La Imitación de Cristo** — Tomás de Kempis
+- [ ] **Los Hermanos Karamázov** — Fiódor Dostoyevski
+- [ ] **El Purgatorio** — Dante Alighieri
+- [ ] **Las Crónicas de Narnia** — C. S. Lewis
+- [ ] **El Paraíso Perdido** — John Milton
+
 ---
 
-*Última actualización: 2026-09-09*
+*Última actualización: 2026-09-28*

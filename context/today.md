@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-09-17
+# Foco de hoy — 2026-09-28
 
-1. Recuperar los 3 past_due de Stripe ($3,600 MXN/mes) — diagnosticar tarjeta vs. valor y contactar a cada uno
-2. Instrumentar analítica en el sitio de 1KlickAds (Search Console, GA, Clarity, test de formulario, Meta Pixel)
-3. Cerrar una de las dos tareas "En progreso" — Analytics en 1Klick Ads o Inbox/Comentarios
+1. Recuperar los 2 past_due de Stripe ($2,400 MXN/mes) antes de las 11:00
+2. 14 demos (11:00–18:00): cerrar 3+ altas y registrar el resultado de cada demo en el momento
+3. Cerrar o re-definir el scope de "Analytics en 1Klick Ads" (lleva 11 días en progreso)

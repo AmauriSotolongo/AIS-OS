@@ -171,3 +171,6 @@ Referencias: 0 — el checklist de @tomyespinosa se convirtió en tarea accionab
 Tareas creadas en Notion: 2 (recomendaciones de Klicky en campañas; instrumentar analítica en 1KlickAds).
 2 TikToks transcritos a raw/. Nota: el segundo (danielbilbao) falló con transcribe_reel.py por selección de formato de yt-dlp; se descargó manual con `-f "ba/b"` y se transcribió aparte. Candidato a arreglo en el script.
 Inbox vaciado.
+
+## [2026-09-28] ingest | Inbox — 14 items procesados
+Conceptos creados: 0. Referencias: 0. Features/tareas creadas en Notion: 9 (4 de 1Klick Sales/agente IA, 2 de 1KlickAds, spike Jev, 1Klick Rewards, estudio de ads/funnel de competidores). Quedan 5 links (2 IG, 1 reel, 2 X) en el inbox para revisión manual de Amauri.
