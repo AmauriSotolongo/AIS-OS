@@ -1,7 +1,7 @@
 # Noah Haupt — Video by noah.haupt
 
 **Fuente:** https://www.instagram.com/reel/Ddod3ZUjmIf/
-**Fecha:** 2026-09-28
+**Fecha:** 2026-10-02
 **Tipo:** transcripción de Instagram Reel
 
 ---

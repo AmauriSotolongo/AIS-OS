@@ -1,5 +1,5 @@
-# Foco de hoy — 2026-09-28
+# Foco de hoy — 2026-10-06
 
-1. Recuperar los 2 past_due de Stripe ($2,400 MXN/mes) antes de las 11:00
-2. 14 demos (11:00–18:00): cerrar 3+ altas y registrar el resultado de cada demo en el momento
-3. Cerrar o re-definir el scope de "Analytics en 1Klick Ads" (lleva 11 días en progreso)
+1. Cada demo de hoy termina con link de pago enviado o con fecha de seguimiento agendada
+2. Recuperar los 4 past_due ($6,000 MXN/mes) o dejar el cobro automatizado
+3. Registrar el resultado de las demos de hoy (se presentó / cerró / seguimiento / objeción)

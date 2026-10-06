@@ -174,3 +174,11 @@ Inbox vaciado.
 
 ## [2026-09-28] ingest | Inbox — 14 items procesados
 Conceptos creados: 0. Referencias: 0. Features/tareas creadas en Notion: 9 (4 de 1Klick Sales/agente IA, 2 de 1KlickAds, spike Jev, 1Klick Rewards, estudio de ads/funnel de competidores). Quedan 5 links (2 IG, 1 reel, 2 X) en el inbox para revisión manual de Amauri.
+
+## [2026-10-06] ingest | Inbox — 9 de 10 items procesados
+Conceptos creados: 2 ([[un-cuello-de-botella-a-la-vez]], de reel de Noah Haupt; [[canibalizate-antes-que-otro]], de reel de Jay Foster sobre The Innovator's Dilemma).
+Referencias: 2 ([[checklist-anti-ai-slop-ui]], TikTok @jesseeisenbart; [[conviertemas-anuncios-ia-benchmark]]).
+Libros a Lista de lectura (Notion): 3 nuevos (Ready Fire Aim, Get Scalable, The Innovator's Dilemma). The Mom Test y Profit First ya estaban.
+Tareas creadas en Notion: 4 (agente IA con audios y fotos en 1KlickSales; spike de modelo de imágenes en 1KlickAds; módulo de email marketing en 1KlickAds; revisar SEO de la web AIAS).
+Queda 1 item en el inbox por decisión de Amauri: "recordar antes de 10m".
+Nota: transcribe_reel.py escribe directo a raw/ en vez de raw/staging/. Los archivos se movieron a mano.

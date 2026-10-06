@@ -54,6 +54,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 ### Estrategia & Mercado
 - [[consumer-ai-renaissance|Consumer AI Renaissance]] — La ola consumer de AI llega en 12-24 meses; hoy todo es enterprise (1 source)
 - [[community-over-app|Community Over App]] — Apps → agentes; la comunidad es el único moat que perdura en era AI (1 source)
+- [[canibalizate-antes-que-otro|Canibalízate antes que otro lo haga]] — The Innovator's Dilemma: el incumbente muere defendiendo lo que ya vende (1 source)
 
 ### Ventas — Sistema y Proceso
 - [[prospectar-vs-convencer|Prospectar vs Convencer]] — Los mejores vendedores no convencen, prospectan; venderle a quien ya está comprando (1 source)
@@ -67,6 +68,7 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[estacionalidad-es-bullshit|La Estacionalidad es Bullshit]] — Cuando cae la conversión, la respuesta es más funnel, no esperar (1 source)
 - [[ai-en-ventas-potencializa|AI en Ventas Potencializa]] — AI amplifica volumen; el que usa AI te deja sin trabajo (1 source)
 - [[autoridad-diferida-en-ventas|Autoridad Diferida en Ventas]] — "Déjame consultarlo con el jefe": negociar contra alguien que no está en la sala (1 source)
+- [[un-cuello-de-botella-a-la-vez|Un cuello de botella a la vez]] — Ads → agendar → show-up → retención; arregla una etapa antes de pasar a la otra. Los no-shows son de framing, no de leads (1 source)
 
 ### Ventas — Estrategia & Mercado
 - [[ventas-agencias-no-operaciones|Vende a agencias, no a operaciones]] — Marketing tiene budget y autonomía (1 source)
@@ -86,9 +88,11 @@ Format: `[[Page]] — one-line summary (N sources)`
 - [[llm-wiki-pattern|LLM Wiki Pattern]] — Patrón para construir second brains con LLMs: wiki persistente vs RAG clásico (1 source)
 - [[art-of-war-insights|The Art of War — Insights]] — 3 principios de Sun Tzu aplicados a la estrategia y batalla de los 50 clientes de 1Klick (1 source)
 - [[landing-page-patterns-yc|Landing Page Patterns — YC Companies]] — 10 patrones de hero, social proof, CTA y pricing que comparten Stripe, Airbnb, Deel y 6 más (1 source)
+- [[checklist-anti-ai-slop-ui|Checklist anti "AI slop" para UI]] — 18 reglas para que una app vibe-coded no se vea genérica; QA para ads-ai y landings (1 source)
+- [[conviertemas-anuncios-ia-benchmark|conviertemas.lat — Anuncios con IA]] — Curso tripwire de US$37 con 12 formatos de ads con IA; benchmark de oferta y ángulo para 1KlickAds (1 source)
 
 ## Syntheses
 
 ---
 
-*Last updated: 2026-09-09*
+*Last updated: 2026-10-06*
